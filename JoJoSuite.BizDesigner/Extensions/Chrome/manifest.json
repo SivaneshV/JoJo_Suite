@@ -1,0 +1,24 @@
+{
+    "name": "Recorder",
+    "version": "1.0",
+    "description": "Web UI Recorder",
+    "permissions": [
+        "activeTab",
+        "<all_urls>",
+        "storage",
+        "tabs",
+        "notifications",
+        "http://*/",
+        "https://*/",
+        "downloads"
+    ],
+    "background": {
+        "css": ["core.css"],
+        "scripts": ["core.js", "background.js", "html2canvas.min.js"],
+        "persistent": false
+    },
+    "page_action": {
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+}

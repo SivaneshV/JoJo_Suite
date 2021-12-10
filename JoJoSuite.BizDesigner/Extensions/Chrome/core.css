@@ -1,0 +1,267 @@
+.recorder_mouse_visited {
+    outline: 3px solid rgba(250, 0, 0, 0.7) !important;
+    background: rgba(73, 229, 255, 0.4) !important;
+    z-index: 9999 !important;
+}
+
+#WebDrivePopUp {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 4px !important;
+    background-color: white !important;
+    position: absolute !important;
+    display: none;
+    border: 3px solid black !important;
+    padding: 5px 5px 5px 5px !important;
+    min-width: 450px !important;
+    max-width: 700px !important;
+    z-index: 2147483647 !important;
+    height: auto !important;
+}
+
+table#WebDrivePopUpTable {
+    font-family: "HP Simplified", "Helvetica Neue", Arial, sans-serif !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
+}
+
+table#WebDrivePopUpTable td,
+table#WebDrivePopUpTable th {
+    border: 1px solid #ddd !important;
+    word-break: break-all !important;
+    border: 1px solid #dadada !important;
+    padding: 5px 5px 5px 5px !important;
+    font-family: "HP Simplified", "Helvetica Neue", Arial, sans-serif !important;
+    width: 50px !important;
+    font-size: 11pt !important;
+    font-weight: 400;
+}
+
+table#WebDrivePopUpTable tr:nth-child(even) {
+    background-color: #f2f2f2 !important;
+}
+
+input#WebDrivePopUp_CodeIDText {
+    display: table-cell !important;
+    width: 100% !important;
+    height: auto !important;
+    line-height: 25px !important;
+}
+
+table#WebDrivePopUpTable table#WebDrivePopUpTable th {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    text-align: left !important;
+    background-color: #4caf50 !important;
+    color: white !important;
+}
+
+#WebDrivePopUp_CodeIDText,
+#WebDrivePopUp_Actions,
+#WebDrivePopUp_SelectValue,
+#WebDrivePopUp_TextValue {
+    margin: 0px !important;
+    border: 1px solid #ddd;
+    padding: 6px 4px;
+    outline: none;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#WebDrivePopUpTable div.WebDrivePopUp_left {
+    float: left;
+    width: 85% !important;
+}
+
+#WebDrivePopUpTable div.WebDrivePopUp_right {
+    float: right;
+}
+
+span#WebDrivePopUp_CloseButton {
+    display: table-cell !important;
+    -moz-border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    -o-border-radius: 4px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ccc !important;
+    color: white !important;
+    background-color: #980000 !important;
+    cursor: pointer !important;
+    font-size: 13pt !important;
+    font-weight: bold !important;
+    /* position: absolute !important;
+    right: 3px !important;
+    top: 8px !important; */
+    width: 20px !important;
+    height: 25px !important;
+    padding: 5px 0px 0px 10px !important;
+    margin-right: 6px !important;
+}
+
+span#WebDrivePopUp_CloseButton:hover {
+    background-color: #c00000 !important;
+}
+
+.WebDrivePopUp_Button {
+    cursor: pointer !important;
+    color: #fff !important;
+    background-color: #0080db !important;
+    border-color: #07c !important;
+    box-shadow: inset 0 1px 0 #66bfff !important;
+    border: 1px solid transparent !important;
+    border-radius: 3px !important;
+    margin-top: 5px !important;
+    font-size: 11pt !important;
+    font-family: "HP Simplified", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    padding: 1% 2% !important;
+    height: auto !important;
+    line-height: 20px !important;
+}
+
+.WebDrivePopUp_Button:hover {
+    background-color: #0095ff !important;
+}
+
+.WebDrivePopUp_Cancel_Button {
+    cursor: pointer !important;
+    color: #fff !important;
+    background-color: #6c757d !important;
+    border-color: #575e64 !important;
+    box-shadow: inset 0 1px 0 #8c949b !important;
+    border: 1px solid transparent !important;
+    border-radius: 3px !important;
+    margin-top: 5px !important;
+    font-size: 11pt !important;
+    font-family: "HP Simplified", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    padding: 1% 2% !important;
+    height: auto !important;
+    line-height: 20px !important;
+}
+
+.WebDrivePopUp_Cancel_Button:hover {
+    background-color: #848f99 !important;
+}
+
+#recording {
+    background-color: white !important;
+    font-family: "HP Simplified", "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: row !important;
+    margin: 10px !important;
+    width: auto !important;
+    border: 1px #004d8f solid !important;
+    padding-right: 25px !important;
+    margin-right: -22px !important;
+    position: -webkit-sticky !important;
+    position: absolute !important;
+    position: fixed !important;
+    bottom: 4.5%;
+    right: 0 !important;
+    border-radius: 30px !important;
+    animation-iteration-count: 1 !important;
+    animation-fill-mode: forwards !important;
+    visibility: hidden !important;
+    z-index: 2147483500 !important;
+    height: 28px !important;
+}
+
+#ide-img {
+    width: 28px !important;
+    margin-right: 2px !important;
+}
+
+.moveRecordToTop {
+    bottom: 90% !important;
+    top: 4.5% !important;
+}
+
+.moveRecordToBottom {
+    top: 90% !important;
+    bottom: 4.5% !important;
+}
+
+#circle {
+    height: 10px !important;
+    width: 10px !important;
+    background: #e80600 !important;
+    border-radius: 50% !important;
+    margin: 0 5px !important;
+    animation: fadeIn 1s infinite alternate !important;
+}
+
+#content {
+    color: #004d8f !important;
+    text-align: center !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 14pt;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        visibility: visible !important;
+        opacity: 0 !important;
+        margin-right: -200px !important;
+    }
+    100% {
+        opacity: 1 !important;
+        margin-right: -22px !important;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0 !important;
+    }
+}
+
+.highlightElement {
+    background: yellow !important;
+    border: 5px solid brown !important;
+    color: black !important;
+}
+
+#recordLoading {
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(51, 51, 51, 0.5) !important;
+    position: fixed !important;
+    z-index: 99999 !important;
+    left: 0 !important;
+    top: 0 !important;
+    text-align: center !important;
+    padding-top: 20% !important;
+    font-family: "Calibri" !important;
+    font-size: xx-large !important;
+    font-weight: bold !important;
+    color: white !important;
+    display: none;
+}
+
+#recordLoadingClose {
+    position: fixed !important;
+    right: 2% !important;
+    top: 2% !important;
+    cursor: pointer !important;
+    border: 1px solid rgb(155, 155, 155) !important;
+    font-size: x-large !important;
+    width: 25px !important;
+    line-height: 25px !important;
+    color: rgb(155, 155, 155);
+}
+
+#recordLoadingClose:hover {
+    position: fixed !important;
+    right: 2% !important;
+    top: 2% !important;
+    cursor: pointer !important;
+    border: 1px solid white !important;
+    font-size: x-large !important;
+    width: 25px !important;
+    line-height: 25px !important;
+    color: white;
+}

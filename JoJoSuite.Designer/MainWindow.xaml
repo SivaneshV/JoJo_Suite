@@ -1,0 +1,443 @@
+﻿<Window x:Class="r2rStudio.Designer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:r2rStudio.Designer"
+        xmlns:local2="clr-namespace:r2rStudio.Control.Base;assembly=r2rStudio.Control.Base"
+        xmlns:cefSharp="ss"
+        mc:Ignorable="d"
+        Title="R2R" 
+        Height="600" 
+        Width="1200" 
+        Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" 
+        WindowState="Maximized" 
+        ResizeMode="CanResizeWithGrip" 
+        AllowsTransparency="True" 
+        WindowStyle="None" 
+        BorderThickness="1" 
+        BorderBrush="#607d8b" Margin="0">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#455a64"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#607d8b"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel x:Name="dpMain" Width="Auto" Height="Auto" Background="#263238" LastChildFill="True" Margin="6">
+
+        <Grid x:Name="gridTitle" DockPanel.Dock="Top" Height="40" MouseLeftButtonDown="gridTitle_MouseLeftButtonDown">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="48" />
+                <ColumnDefinition Width="48" />
+                <ColumnDefinition Width="48" />
+            </Grid.ColumnDefinitions>
+
+            <DockPanel Grid.Row="0" Grid.Column="0">
+                <Image Source="Images/HP_64px.png" Stretch="Fill" VerticalAlignment="Center" Margin="20,0,0,0" Width="32" Height="32"></Image>
+                <Label Content="R2r Studio - [ Alpha 1.0 ]" FontFamily="Arial" FontSize="14" Foreground="#cfd8dc" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+            </DockPanel>
+
+            <Button x:Name="btnWinMin" Grid.Row="0" Grid.Column="1" Width="48" Height="32" HorizontalAlignment="Right" BorderThickness="0" Click="btnWinMin_Click" VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#263238"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#37474f"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Image Height="14" Width="14" Source="/images/win_min01.png" />
+            </Button>
+
+            <Button x:Name="btnWinRestore" Grid.Row="0" Grid.Column="2" Width="48" Height="32" HorizontalAlignment="Right" BorderThickness="0" Click="btnWinRestore_Click" VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#263238"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#37474f"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Image x:Name="btnWinRestoreImage" Height="14" Width="14" Source="/images/win_restore01.png" />
+            </Button>
+
+            <Button x:Name="btnWinClose" Grid.Row="0" Grid.Column="3" Width="48" Height="32" HorizontalAlignment="Right" BorderThickness="0" Click="btnWinClose_Click" MouseEnter="btnWinClose_MouseEnter" MouseLeave="btnWinClose_MouseLeave" VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#263238"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Image Height="14" Width="14" Source="/images/win_close01.png" />
+            </Button>
+
+        </Grid>
+
+        <TabControl DockPanel.Dock="Top" BorderThickness="0" Height="130" Width="Auto" TabStripPlacement="Top" Foreground="White" BorderBrush="{x:Null}" SelectionChanged="TabControl_SelectionChanged">
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+
+                                <Grid Name="Panel">
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                </Grid>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Panel" Property="Background">
+                                            <Setter.Value>
+                                                <SolidColorBrush Color="#455a64"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="#cfd8dc" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Panel" Property="Background" Value="#263238" />
+                                        <Setter TargetName="Panel" Property="TextElement.Foreground" Value="#90a4ae" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+            <TabControl.Background>
+                <SolidColorBrush Color="#455a64"/>
+            </TabControl.Background>
+
+            <TabItem x:Name="ribFile" Header="File" Height="30" Margin="0" Background="#FF3F51B5" BorderBrush="{x:Null}" Width="75" Foreground="White">
+                <Label Content="File goes here..." />
+            </TabItem>
+
+            <TabItem x:Name="ribHome" Header="Home" Width="75px" Margin="0" Background="#FF3F51B5" BorderBrush="{x:Null}" Foreground="White" GotFocus="ribHome_GotFocus">
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Height="65" Orientation="Horizontal">
+                            <Button x:Name="btnFileNew" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Click="btnFileNew_Click" Width="60">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/new01.png" />
+                                    <Label  Content="New" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnFileOpen" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Click="btnFileOpen_Click" Width="60">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/open01.png" />
+                                    <Label  Content="Open" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnFileSave" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Click="btnFileSave_Click" Width="60">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/save01.png" />
+                                    <Label  Content="Save" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+                        <Label Height="25" Content="File" HorizontalAlignment="Center" >
+                            <Label.Foreground>
+                                <SolidColorBrush Color="#90a4ae"/>
+                            </Label.Foreground>
+                        </Label>
+                    </StackPanel>
+
+                    <Rectangle Width="1" Fill="#546e7a" Margin="0,5" />
+
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Height="65" Orientation="Horizontal">
+
+                            <Button x:Name="btnRunRun" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Click="btnRunRun_Click" Width="60">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/start01_32.png" />
+                                    <Label  Content="Run" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnRunArgs" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Click="btnRunArgs_Click" Width="80">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/icons8_Variable_32.png" />
+                                    <Label  Content="Arguments" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <Label Height="25" Content="Run" HorizontalAlignment="Center" >
+                            <Label.Foreground>
+                                <SolidColorBrush Color="#90a4ae"/>
+                            </Label.Foreground>
+                        </Label>
+                    </StackPanel>
+
+                    <Rectangle Width="1" Fill="#546e7a" Margin="0,5" />
+
+                </StackPanel>
+
+            </TabItem>
+
+            <TabItem x:Name="ribCode" Header="Code" Width="75px" Background="#FF3F51B5" Margin="0" BorderBrush="{x:Null}" Foreground="White" GotFocus="ribCode_GotFocus">
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Height="65" Orientation="Horizontal">
+
+                            <Button x:Name="btnCodeGenerate" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Click="btnGenerateCode_Click" Width="100">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/Code_50px.png" />
+                                    <Label  Content="Generate Code" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnCodeValidate" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Width="60" Click="btnCodeValidate_Click">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/validate.png" />
+                                    <Label  Content="Validate" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnCodeErrors" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Width="60">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/err01.png" />
+                                    <Label  Content="Errors" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnCodeDebug" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Click="btnCodeDebug_Click" Width="60">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/start01_32.png" />
+                                    <Label  Content="Debug" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+                        <Label Height="25" Content="Code" HorizontalAlignment="Center" >
+                            <Label.Foreground>
+                                <SolidColorBrush Color="#90a4ae"/>
+                            </Label.Foreground>
+                        </Label>
+                    </StackPanel>
+
+                    <Rectangle Width="1" Fill="#546e7a" />
+
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Height="65" Orientation="Horizontal">
+
+                            <Button x:Name="btnDownloadCopy" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Width="100" Click="btnDownloadCopy_Click">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/copy01.png" />
+                                    <Label  Content="Copy" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnDownloadProgram" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Width="100">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/Desktop Download_50px.png" />
+                                    <Label  Content="Program.cs" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="btnDownloadProject" Margin="5" BorderThickness="0" BorderBrush="{x:Null}" Width="60">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Height="32" Width="32" Source="Images/Downloads_50px.png" />
+                                    <Label  Content="Project" HorizontalAlignment="Center" Foreground="#cfd8dc" />
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+                        <Label Height="25" Content="Download" HorizontalAlignment="Center" >
+                            <Label.Foreground>
+                                <SolidColorBrush Color="#90a4ae"/>
+                            </Label.Foreground>
+                        </Label>
+                    </StackPanel>
+
+                    <Rectangle Width="1" Fill="#546e7a" />
+
+                </StackPanel>
+
+            </TabItem>
+
+            <TabItem x:Name="ribApp" Header="App" Width="75px" Background="#FF3F51B5" Margin="0" BorderBrush="{x:Null}" Foreground="White">
+                <Label Content="App goes here..." />
+            </TabItem>
+
+            <TabItem x:Name="ribConfig" Header="Config" Width="75px" Background="#FF3F51B5" Margin="0" BorderBrush="{x:Null}" Foreground="White">
+                <Label Content="Config goes here..." />
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Width="Auto" Height="40" Background="#37474f" Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Label x:Name="lblStatus" Width="155" Height="23" Content="Welcome to JoJo Suite" FontFamily="Arial" FontSize="12" Foreground="White" />
+        </StackPanel>
+
+        <Grid x:Name="gridMain" Width="Auto" Height="Auto" Background="#546e7a">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="250" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Column="0" Grid.Row="0" Width="Auto" Height="Auto" Background="#546e7a">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btnSizeTools" Grid.Column="0" Grid.Row="0" Margin="5,0,0,0" Content="" Background="#546e7a" Click="btnSizeTools_Click"/>
+
+                <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,0,0,5" Grid.Column="0" Grid.Row="1" TabStripPlacement="Bottom">
+                    <TabItem Header="Toolbox">
+                        <ContentControl x:Name="ccTools" />
+                    </TabItem>
+                    <TabItem Header="Outline">
+                        <ContentControl x:Name="ccOutline" />
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+
+            <GridSplitter Background="#546e7a" Height="Auto" Width="5" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch" ShowsPreview="True" />
+
+            <TabControl x:Name="tabMain" Width="Auto"  Grid.Row="0" Grid.Column="2" TabStripPlacement="Top" Margin="0,5"  >
+
+                <TabItem x:Name="tiMain">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="tbFileName" Text="Untitled" VerticalAlignment="Center" />
+                            <Image Source="images/close01.png" VerticalAlignment="Center" Width="16" Height="16" Margin="10,0,0,0" Cursor="Hand" MouseUp="Image_MouseUp" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Canvas x:Name="canvasMain" Background="#fff" AllowDrop="True" DragEnter="canvasMain_DragEnter" Drop="canvasMain_Drop">
+                        <!--<local2:BaseControl x:Name="r2rCtBase4" Canvas.Left="27" Canvas.Top="158" Height="100" Width="200" Title="shameem" Module="email" />-->
+                        <!--<Polygon Points="25,0 0,25 25,50 50,25" Stretch="Fill" Fill="WhiteSmoke" Stroke="Silver" StrokeThickness="1" Height="113" Width="109" Canvas.Left="114" Canvas.Top="52" Visibility="Hidden"/>-->
+                    </Canvas>
+                </TabItem>
+                <TabItem x:Name="tiCode">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="tbCode" Text="Code" VerticalAlignment="Center" />
+                            <Image Source="images/close01.png" VerticalAlignment="Center" Width="16" Height="16" Margin="10,0,0,0" Cursor="Hand" MouseUp="Image_MouseUp" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid Width="Auto" Height="Auto" Background="#fff">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+
+                        <!--<StackPanel Grid.Column="0" Grid.Row="0">
+                            <WebBrowser x:Name="browserCode1" Width="500" Height="300" />
+                        </StackPanel>-->
+                       
+                        <!--<cefSharp:ChromiumWebBrowser x:Name="browserCode" Grid.Column="0" Grid.Row="0" />-->
+                        <GridSplitter x:Name="gsErr" Background="silver" Height="5" Width="Auto" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" ShowsPreview="True" />
+                        <ListBox x:Name="lstErr" Grid.Row="2" Grid.Column="0" Background="#ffcdd2" BorderBrush="silver"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+
+            <GridSplitter Background="#546e7a" Height="Auto" Width="5" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Stretch" ShowsPreview="True" />
+
+            <Grid Grid.Column="4" Grid.Row="0" Width="Auto" Height="Auto" Background="#546e7a">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btnSizeProp" Grid.Column="0" Grid.Row="0" Margin="0,0,5,0" Content="" Background="#546e7a" Click="btnSizeProp_Click"/>
+
+                <TabControl VerticalAlignment="Stretch" Margin="0,0,5,5" Grid.Column="0" Grid.Row="1" TabStripPlacement="Bottom">
+                    <TabItem Header="Properties">
+                        <ContentControl x:Name="ccProps" />
+                    </TabItem>
+                </TabControl>
+                
+            </Grid>
+
+
+         
+
+        </Grid>
+
+    </DockPanel>
+</Window>

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB61C081-3A84-4DC6-BE4E-1BE7F11E61E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JoJoSuite.Helper</RootNamespace>
+    <AssemblyName>JoJoSuite.Helper</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JoJoSuite.Actions.Base">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.ClipBoard">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.ClipBoard.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.ClipBoard.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.ClipBoard.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Common">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Common.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Common.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Database">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Database.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Database.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Email">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Email.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Email.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Email.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.IO">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.IO.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.IO.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Office.Excel">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Office.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Office.Excel.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Office.Excel.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.SAP">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.SAP.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.SAP.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.SAP.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Security">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Security.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Security.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.SharePoint">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.SharePoint.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.SharePoint.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Tracking">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Tracking.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Tracking.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Tracking.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Web">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Actions.Web.Design">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Actions.Web.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Library.Email">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Library.Email.dll</HintPath>
+    </Reference>
+    <Reference Include="JoJoSuite.Library.Office.Excel">
+      <HintPath>..\SupportingDLLs\JoJoSuite.Library.Office.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="r2rStudio.Activities.Database.Design">
+      <HintPath>..\SupportingDLLs\r2rStudio.Activities.Database.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

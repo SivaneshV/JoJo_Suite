@@ -1,0 +1,108 @@
+﻿<sap:ActivityDesigner x:Class="JoJoSuite.Activities.Web.Design.GetBrowserDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:System;assembly=mscorlib"
+    xmlns:s2="clr-namespace:OpenQA.Selenium;assembly=WebDriver"
+    xmlns:s3="clr-namespace:Microsoft.VisualBasic;assembly=System"                      
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+    xmlns:Model="clr-namespace:System.Activities.Presentation.Model;assembly=System.Activities.Presentation"
+    xmlns:JoJoSuite.Activities.Web="clr-namespace:JoJoSuite.Activities.Web;assembly=JoJoSuite.Activities.Web">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+            <sapc:ModelToObjectValueConverter x:Key="ModelToObjectValueConverter" />
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter"/>
+          
+            <ObjectDataProvider x:Key="WebBrowserType" MethodName="GetValues" ObjectType="{x:Type s:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="JoJoSuite.Activities.Web:r2rWebBrowserType" />
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+
+            <DataTemplate x:Key="Collapsed">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>                       
+                    </Grid.RowDefinitions>
+                    
+                    <!--<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="0"  Margin="5" Text="Browser" />
+                    <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Source={StaticResource WebBrowserType}}" SelectedIndex="0" />-->
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="0" Margin="5" Text="URL" />
+                    <sapv:ExpressionTextBox HintText="Text must be quoted" Expression="{Binding Path=ModelItem.URL, Mode=TwoWay, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In }" ExpressionType="s:String" Grid.Row="0" Grid.Column="1" OwnerActivity="{Binding Path=ModelItem}" Width="200" Margin="0,5" MaxLines="1" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="0" Margin="5" Text="Connection" />
+                    <sapv:ExpressionTextBox HintText="Text must be quoted" Expression="{Binding Path=ModelItem.BrowserDriver, Mode=TwoWay, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In }" ExpressionType="s:String" Grid.Row="1" Grid.Column="1" OwnerActivity="{Binding Path=ModelItem}" Width="200" Margin="0,5" MaxLines="1" />
+
+                    <Button Grid.Row="2" Grid.Column="1" Name="btnCreateDriver1" Content="Create Connection" Click="btnCreateDriver1_Click" />
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="Expanded">
+                <Grid Background="#fff">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                  
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                   
+                    <!--<TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="0" Margin="5" Text="Browser" />
+                    <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Source={StaticResource WebBrowserType}}" SelectedValue="{Binding Path=ModelItem.BrowserType, Mode=TwoWay, Converter={StaticResource ModelToObjectValueConverter}}" />-->
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="0" Margin="5" Text="URL" />
+                    <sapv:ExpressionTextBox HintText="Text must be quoted" Expression="{Binding Path=ModelItem.URL, Mode=TwoWay, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In }" ExpressionType="s:String" Grid.Row="0" Grid.Column="1" OwnerActivity="{Binding Path=ModelItem}" Width="200" Margin="0,5" MaxLines="1" />
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="0" Margin="5" Text="Connection" />
+                    <sapv:ExpressionTextBox HintText="Text must be quoted" Expression="{Binding Path=ModelItem.BrowserDriver, Mode=TwoWay, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In }" ExpressionType="s:String" Grid.Row="1" Grid.Column="1" OwnerActivity="{Binding Path=ModelItem}" Width="200" Margin="0,5" MaxLines="1" />
+
+                    <Button Grid.Row="2" Grid.Column="1" Name="btnCreateDriver1" Content="Create Connection" Click="btnCreateDriver1_Click" />
+
+                    <!--<Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="Silver" Margin="5">
+                        <StackPanel>
+                            <TextBlock Text="Body" Margin="5"></TextBlock>
+                            <sap:WorkflowItemPresenter x:Uid="sap:WorkflowWebDriver" DragDrop.DragEnter="WorkflowItemPresenter_DragEnter"  BorderThickness="1" BorderBrush="Black" Margin="0,10,0,10"
+                                               HintText="Drop Activities Here" Item="{Binding Path=ModelItem.Body, Mode=TwoWay}">
+                            </sap:WorkflowItemPresenter>
+                        </StackPanel>
+                    </Border>-->
+                </Grid>
+
+            </DataTemplate>
+            <Style x:Key="ExpandOrCollapsedStyle" TargetType="{x:Type ContentPresenter}">
+                <Setter Property="ContentTemplate" Value="{DynamicResource Expanded}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=ShowExpanded}" Value="false">
+                        <Setter Property="ContentTemplate" Value="{DynamicResource Collapsed}" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush>
+            <DrawingBrush.Drawing>
+                <ImageDrawing>
+                    <ImageDrawing.Rect>
+                        <Rect Location="0,0" Size="16,16"/>
+                    </ImageDrawing.Rect>
+                    <ImageDrawing.ImageSource>
+                        <BitmapImage UriSource="Icons\Web_OpenBrowser.png"/>
+                    </ImageDrawing.ImageSource>
+                </ImageDrawing>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <Grid>
+        <ContentPresenter Style="{DynamicResource ExpandOrCollapsedStyle}" Content="{Binding}" />
+    </Grid>
+</sap:ActivityDesigner>

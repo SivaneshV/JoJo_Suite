@@ -1,0 +1,30 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:r2rStudio.Designer"
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="r2rStudio.Designer.winRibbon"
+        mc:Ignorable="d"
+        Title="winRibbon" Height="600" Width="800">
+
+    <DockPanel  Width="Auto" Height="Auto" Background="#3f51b5" LastChildFill="True">
+        
+        <Custom:Ribbon DockPanel.Dock="Top" Width="Auto" >
+            <Custom:RibbonTab Header="File">
+                <Custom:RibbonGroup Header="File">
+                    <Custom:RibbonButton Label="New" LargeImageSource="Images/new01.png" SmallImageSource="Images/new01.png"/>
+                    <Custom:RibbonButton Label="Save"/>
+                    <Custom:RibbonButton Label="Open"/>
+                </Custom:RibbonGroup>
+                <Custom:RibbonGroup Header="Execute"/>
+                <Custom:RibbonGroup Header="Copy"/>
+            </Custom:RibbonTab>
+            <Custom:RibbonTab Header="Home"/>
+            <Custom:RibbonTab Header="Code"/>
+            <Custom:RibbonTab Header="Config"/>
+        </Custom:Ribbon>
+
+    </DockPanel>
+
+</Window>

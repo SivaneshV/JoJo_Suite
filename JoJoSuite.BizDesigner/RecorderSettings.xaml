@@ -1,0 +1,257 @@
+﻿<Window x:Class="JoJoSuite.UI.RecorderSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JoJoSuite.UI"
+        mc:Ignorable="d" 
+        Title="SPARK Recorded Actions" Height="550" Width="800" ResizeMode="NoResize" 
+    WindowStartupLocation="CenterScreen" 
+    Closing="Window_Closing" Loaded="Window_Loaded" Topmost="True" 
+    WindowStyle="None"  AllowsTransparency="True" Background="Transparent"  ShowInTaskbar="True">
+    <Window.Effect>
+        <DropShadowEffect ShadowDepth="10" BlurRadius="8" Opacity="0.4"/>
+    </Window.Effect>
+
+    <Grid Margin="15" Background="White">
+        <Border BorderBrush="{DynamicResource BannerColor}" BorderThickness="1,0,1,1">
+            <DockPanel x:Name="dpMain" Width="Auto" Height="Auto" LastChildFill="True" Margin="0">
+
+                <Grid x:Name="gridTitle" DockPanel.Dock="Top" Height="30" MouseLeftButtonDown="gridTitle_MouseLeftButtonDown" Background="{DynamicResource ThemeColor1}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition Width="48" />
+                    </Grid.ColumnDefinitions>
+
+                    <DockPanel Grid.Row="0" Grid.Column="0" >
+                        <!--<Image Source="Images/r202a.png" Stretch="Fill" VerticalAlignment="Center" Margin="10,0,10,0" Width="32" Height="32"/>-->
+                        <Label x:Name="lblTitle" Content="SPARK Recorded Actions" FontFamily="HP Simplified" FontSize="16" Padding="15,0,0,0" FontWeight="Medium" Foreground="{DynamicResource BackgroundBrush}" VerticalAlignment="Center"  />
+
+                    </DockPanel>
+                    <Button x:Name="btnWinMin" Grid.Row="0" Grid.Column="3" Width="48" Height="30" HorizontalAlignment="Right" BorderThickness="0" Click="btnWinMin_Click" VerticalAlignment="Top">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="{DynamicResource ThemeColor1}"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{DynamicResource ThemeColor2}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Image Height="14" Width="14" Source="/images/win_min01.png" />
+                    </Button>
+
+                    <Button x:Name="btnWinClose" Grid.Row="0" Grid.Column="4" Width="48" Height="30" HorizontalAlignment="Right" BorderThickness="0" Click="btnWinClose_Click" VerticalAlignment="Top">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="{DynamicResource ThemeColor1}"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Red"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Image Height="14" Width="14" Source="/images/win_close01.png" />
+                    </Button>
+
+                </Grid>
+
+                <Grid Background="White" x:Name="ControlGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="22"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <DataGrid Width="auto" Margin="5,5,5,0" AutoGenerateColumns="False" HorizontalAlignment="Left" 
+                                  HorizontalGridLinesBrush="#e8e8e8" AllowDrop="True"
+                                  VerticalGridLinesBrush="Gray" x:Name="dgElements" CanUserAddRows="False"
+                  RowHeight="32" SelectionMode="Single" Grid.Column="0" Background="White" BorderBrush="Transparent" 
+                  CellEditEnding="DgElements_CellEditEnding" PreviewKeyUp="dgElements_PreviewKeyUp" MouseLeftButtonUp="dgElements_MouseLeftButtonUp" 
+                                   Drop="dgElements_Drop">
+                            <DataGrid.ColumnHeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="FontWeight"  Value="Bold" />
+                                    <Setter Property="Background"  Value="#dadada" />
+                                    <Setter Property="Foreground"  Value="#333333" />
+                                    <Setter Property="BorderBrush" Value="Gray" />
+                                    <Setter Property="BorderThickness" Value="1" />
+                                    <Setter Property="Padding"  Value="5" />
+                                    <Setter Property="Height"  Value="30" />
+                                </Style>
+                            </DataGrid.ColumnHeaderStyle>
+                            <DataGrid.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" 
+                   Color="#c9c9c9"/>
+                                <Style TargetType="ScrollBar">
+                                    <Style.Triggers>
+                                        <Trigger Property="Orientation" Value="Vertical">
+                                            <Setter Property="Width" Value="5"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.RowStyle>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="White" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#f3f3f3"/>
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="#eaeaea"/>
+                                        </Trigger>
+                                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                            <Setter Property="Background" Value="#eaeaea" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Step #" Width="52">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Sno}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="StepId" Visibility="Hidden">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding CaptureCount}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Action" Width="93">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding ElementAction}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                    <DataGridTemplateColumn.CellEditingTemplate>
+                                        <DataTemplate>
+                                            <ComboBox ItemsSource="{Binding Path=Commands}" SelectedItem="{Binding Path=ElementAction}">
+                                            </ComboBox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellEditingTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Target" Width="280">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding ElementSelectedPath}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                    <DataGridTemplateColumn.CellEditingTemplate>
+                                        <DataTemplate>
+                                            <!--<TextBox Text="{Binding ElementXPath}" Padding="0,3,0,0"/>-->
+                                            <ComboBox ItemsSource="{Binding Path=ElementPaths}" IsEditable="True" SelectedItem="{Binding Path=ElementSelectedPath}" >
+                                            </ComboBox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellEditingTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Input Value" Width="180">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding ElementValue}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                    <DataGridTemplateColumn.CellEditingTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding ElementValue}" Padding="0,3,0,0"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellEditingTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Window" Width="130">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding WindowTitle}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                    <DataGridTemplateColumn.CellEditingTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding WindowTitle}" Padding="0,3,0,0"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellEditingTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                    <Border BorderBrush="#d6d9dc" BorderThickness="0,1,0,0" Grid.Row="1" Margin="0,0,0,0">
+                        <Grid Margin="0,5,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="120"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="120"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="120"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="120"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="120"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Button x:Name="btnNewElement" Grid.Column="1" Margin="10,0,0,0" Content="New Action" Style="{DynamicResource TextButton}" Click="BtnNewElement_Click" />
+                            <Button x:Name="btnHighlight" Grid.Column="3" Content="Highlight" Style="{DynamicResource TextButton}" Click="BtnHighlight_Click"/>
+                            <!--<Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="91,428,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="BtnUpdate_Click" Grid.Column="1"/>-->
+                            <Button x:Name="btnRefresh" Grid.Column="5" Content="Refresh" Style="{DynamicResource TextButton}" Click="BtnRefresh_Click"/>
+                            <Button x:Name="btnDelete" Grid.Column="7" Content="Delete" Style="{DynamicResource TextButton}" Click="BtnDelete_Click" />
+                            <Button x:Name="btnRun" Grid.Column="9" Margin="0,0,10,0" Content="Run All" Visibility="Hidden" Style="{DynamicResource TextButton}" Click="btnRun_Click"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#d6d9dc" BorderThickness="0,1,0,0" Grid.Row="2" Margin="0" x:Name="GenerateCodeBorder">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="btnGenerateCode" Grid.Column="8" Margin="0" Content="GENERATE C# CODE" Width="200" Style="{DynamicResource TextButton}" Click="btnGenerateCode_Click"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="#d6d9dc" BorderThickness="0,1,0,0" Grid.Row="3" Margin="0,0,0,0" x:Name="StatusBorder">
+                        <Grid Margin="0,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label x:Name="lblCaptureCount" Content="" Grid.Column="0" Visibility="Hidden"/>
+                            <Label x:Name="lblStatus" FontSize="12" Content="Double click the cell to edit" Margin="0,-3,0,0" Grid.Column="0" Width="773" Foreground="{DynamicResource BannerColor}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,36 @@
+﻿  public long ExecuteDataSet(out DataSet dataSet)
+        {
+            long returnCode = -1;
+            string sqlConnectionString = string.Empty;
+            SqlConnection sqlConnection = new SqlConnection(sqlConnectionString);
+            
+            dataSet = new DataSet();
+            try
+            {
+               
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+
+                SqlCommand cmd = new SqlCommand(script, sqlConnection);
+                    cmd.CommandType = CommandType.Text;
+                   
+                sqlCommand.Connection = sqlConnection;
+                DateTime Startdateandtime = DateTime.Now;
+                sqlDataAdapter.Fill(dataSet);
+               
+                returnCode = 0;
+
+            }
+            catch (SqlException ex)
+            {
+                returnCode = 1000;
+               
+            }
+            finally
+            {
+
+
+            }
+            return returnCode;
+
+        }

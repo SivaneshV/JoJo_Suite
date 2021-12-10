@@ -1,0 +1,25 @@
+public void ConvertToHtmlMain()
+{
+    pdfhtmlinput = "{0}";
+    string op1 = Path.GetFileNameWithoutExtension(pdfhtmlinput);
+    pdfhtmloutput = "{0}" + op1 + ".html";
+
+    PDFParser pdfParser = new PDFParser();
+    ConverToHTML(pdfParser);
+}
+      
+private static void ConverToHTML(PDFParser pdfParser)
+{
+    bool result = pdfParser.ExtractText(pdfhtmlinput, pdfhtmloutput);
+    if (result)
+    {
+        Console.WriteLine("HTML Convertion success");
+        Console.ReadKey();
+    }
+    else
+    {
+        Console.WriteLine("HTML Convertion Failed");
+        Console.ReadKey();
+
+    }
+}

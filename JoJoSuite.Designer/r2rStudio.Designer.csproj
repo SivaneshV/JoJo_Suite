@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7747AD1-6077-45E5-BF72-BCD141C95A4B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>r2rStudio.Designer</RootNamespace>
+    <AssemblyName>r2rStudio.Designer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp, Version=57.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CefSharp.Common.57.0.0\CefSharp\x64\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.BrowserSubprocess">
+      <HintPath>..\packages\CefSharp.Common.57.0.0\CefSharp\x64\CefSharp.BrowserSubprocess.exe</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.BrowserSubprocess.Core">
+      <HintPath>..\packages\CefSharp.Common.57.0.0\CefSharp\x64\CefSharp.BrowserSubprocess.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=57.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CefSharp.Common.57.0.0\CefSharp\x64\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Wpf, Version=57.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CefSharp.Wpf.57.0.0\CefSharp\x64\CefSharp.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\..\..\..\R2R\Output\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.8\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Activities.Design, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\R2R\Output\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices.Auth">
+      <HintPath>..\..\..\..\..\R2R\Output\Microsoft.Exchange.WebServices.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="RibbonControlsLibrary, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Core.Presentation" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WebDriver, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ADR\TFS\AdrAutomation\AdrAutomation\AdrOSS\bin\Debug\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CON1.xaml.cs">
+      <DependentUpon>CON1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DB1.xaml.cs">
+      <DependentUpon>DB1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DC1.xaml.cs">
+      <DependentUpon>DC1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DC2.xaml.cs">
+      <DependentUpon>DC2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileWindow.xaml.cs">
+      <DependentUpon>FileWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="wfdhSample.xaml.cs">
+      <DependentUpon>wfdhSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winRibbon.xaml.cs">
+      <DependentUpon>winRibbon.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CON1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DB1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DC1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DC2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wfdhSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winRibbon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\win_close01.png" />
+    <Resource Include="Images\win_min01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\win_max01.png" />
+    <Resource Include="Images\win_restore01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\win01.png" />
+    <Resource Include="Images\word01.png" />
+    <Resource Include="Images\ws01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\access01.png" />
+    <Resource Include="Images\add01.png" />
+    <Resource Include="Images\assign01.ico" />
+    <Resource Include="Images\assign01_16.png" />
+    <Resource Include="Images\assign01_32.png" />
+    <Resource Include="Images\click01.ico" />
+    <Resource Include="Images\click01_16.png" />
+    <Resource Include="Images\click01_32.png" />
+    <Resource Include="Images\close01.png" />
+    <Resource Include="Images\collection01.ico" />
+    <Resource Include="Images\collection01_16.png" />
+    <Resource Include="Images\collection01_32.png" />
+    <Resource Include="Images\copy01.png" />
+    <Resource Include="Images\cut01.png" />
+    <Resource Include="Images\db01.png" />
+    <Resource Include="Images\dbcmd01.ico" />
+    <Resource Include="Images\dbcmd01_16.png" />
+    <Resource Include="Images\dbcmd01_32.png" />
+    <Resource Include="Images\dbconn01.ico" />
+    <Resource Include="Images\dbconn01_16.png" />
+    <Resource Include="Images\dbconn01_32.png" />
+    <Resource Include="Images\dbdata01.ico" />
+    <Resource Include="Images\dbdata01_16.png" />
+    <Resource Include="Images\dbdata01_32.png" />
+    <Resource Include="Images\element01.ico" />
+    <Resource Include="Images\element01_16.png" />
+    <Resource Include="Images\element01_32.png" />
+    <Resource Include="Images\email01.ico" />
+    <Resource Include="Images\email01.png" />
+    <Resource Include="Images\email01_16.png" />
+    <Resource Include="Images\email01_32.png" />
+    <Resource Include="Images\excel01.ico" />
+    <Resource Include="Images\excel01.png" />
+    <Resource Include="Images\excel01_16.png" />
+    <Resource Include="Images\excel01_32.png" />
+    <Resource Include="Images\fav01.png" />
+    <Resource Include="Images\for01.ico" />
+    <Resource Include="Images\for01_16.png" />
+    <Resource Include="Images\for01_32.png" />
+    <Resource Include="Images\for02.ico" />
+    <Resource Include="Images\for02_16.png" />
+    <Resource Include="Images\for02_32.png" />
+    <Resource Include="Images\icons8_Add_File.ico" />
+    <Resource Include="Images\icons8_Add_File_16.png" />
+    <Resource Include="Images\icons8_Add_File_32.png" />
+    <Resource Include="Images\icons8_Attach.ico" />
+    <Resource Include="Images\icons8_Attach_16.png" />
+    <Resource Include="Images\icons8_Attach_32.png" />
+    <Resource Include="Images\icons8_Copy.ico" />
+    <Resource Include="Images\icons8_Copy_16.png" />
+    <Resource Include="Images\icons8_Copy_32.png" />
+    <Resource Include="Images\icons8_Cut.ico" />
+    <Resource Include="Images\icons8_Cut_16.png" />
+    <Resource Include="Images\icons8_Cut_32.png" />
+    <Resource Include="Images\icons8_Form.ico" />
+    <Resource Include="Images\icons8_Form_16.png" />
+    <Resource Include="Images\icons8_Form_32.png" />
+    <Resource Include="Images\icons8_Linked_Mailbox.ico" />
+    <Resource Include="Images\icons8_Linked_Mailbox_16.png" />
+    <Resource Include="Images\icons8_Linked_Mailbox_32.png" />
+    <Resource Include="Images\icons8_Login.ico" />
+    <Resource Include="Images\icons8_Login_16.png" />
+    <Resource Include="Images\icons8_Login_32.png" />
+    <Resource Include="Images\icons8_New_Copy.ico" />
+    <Resource Include="Images\icons8_New_Copy_16.png" />
+    <Resource Include="Images\icons8_New_Copy_32.png" />
+    <Resource Include="Images\icons8_New_File.ico" />
+    <Resource Include="Images\icons8_New_File_16.png" />
+    <Resource Include="Images\icons8_New_File_32.png" />
+    <Resource Include="Images\icons8_New_Post.ico" />
+    <Resource Include="Images\icons8_New_Post_16.png" />
+    <Resource Include="Images\icons8_New_Post_32.png" />
+    <Resource Include="Images\icons8_Paste.ico" />
+    <Resource Include="Images\icons8_Paste_16.png" />
+    <Resource Include="Images\icons8_Paste_32.png" />
+    <Resource Include="Images\icons8_Play.ico" />
+    <Resource Include="Images\icons8_Play_16.png" />
+    <Resource Include="Images\icons8_Play_32.png" />
+    <Resource Include="Images\icons8_Price_Tag.ico" />
+    <Resource Include="Images\icons8_Price_Tag_16.png" />
+    <Resource Include="Images\icons8_Price_Tag_32.png" />
+    <Resource Include="Images\icons8_SAP.ico" />
+    <Resource Include="Images\icons8_SAP2.ico" />
+    <Resource Include="Images\icons8_SAP2_16.png" />
+    <Resource Include="Images\icons8_SAP2_32.png" />
+    <Resource Include="Images\icons8_SAP_16.png" />
+    <Resource Include="Images\icons8_SAP_32.png" />
+    <Resource Include="Images\icons8_Save.ico" />
+    <Resource Include="Images\icons8_Save_16.png" />
+    <Resource Include="Images\icons8_Save_32.png" />
+    <Resource Include="Images\icons8_Settings.ico" />
+    <Resource Include="Images\icons8_Settings_16.png" />
+    <Resource Include="Images\icons8_Settings_32.png" />
+    <Resource Include="Images\icons8_Star_Filled.ico" />
+    <Resource Include="Images\icons8_Star_Filled_16.png" />
+    <Resource Include="Images\icons8_Star_Filled_32.png" />
+    <Resource Include="Images\icons8_Submit_for_Approval.ico" />
+    <Resource Include="Images\icons8_Submit_for_Approval_16.png" />
+    <Resource Include="Images\icons8_Submit_for_Approval_32.png" />
+    <Resource Include="Images\icons8_Table.ico" />
+    <Resource Include="Images\icons8_Table_16.png" />
+    <Resource Include="Images\icons8_Table_32.png" />
+    <Resource Include="Images\icons8_Variable.ico" />
+    <Resource Include="Images\icons8_Variable2.ico" />
+    <Resource Include="Images\icons8_Variable2_16.png" />
+    <Resource Include="Images\icons8_Variable2_32.png" />
+    <Resource Include="Images\icons8_Variable_16.png" />
+    <Resource Include="Images\icons8_Variable_32.png" />
+    <Resource Include="Images\if01.ico" />
+    <Resource Include="Images\if01_16.png" />
+    <Resource Include="Images\if01_32.png" />
+    <Resource Include="Images\logic01.png" />
+    <Resource Include="Images\logic02.ico" />
+    <Resource Include="Images\logic02_16.png" />
+    <Resource Include="Images\logic02_32.png" />
+    <Resource Include="Images\login01.ico" />
+    <Resource Include="Images\login01_16.png" />
+    <Resource Include="Images\login01_32.png" />
+    <Resource Include="Images\max01.png" />
+    <Resource Include="Images\min01.png" />
+    <Resource Include="Images\new01.png" />
+    <Resource Include="Images\office01.png" />
+    <Resource Include="Images\ok01.png" />
+    <Resource Include="Images\open01.png" />
+    <Resource Include="Images\outlook01.png" />
+    <Resource Include="Images\paste01.png" />
+    <Resource Include="Images\pdf01.ico" />
+    <Resource Include="Images\pdf01.png" />
+    <Resource Include="Images\pdf01_16.png" />
+    <Resource Include="Images\pdf01_32.png" />
+    <Resource Include="Images\pp01.png" />
+    <Resource Include="Images\recent01.png" />
+    <Resource Include="Images\remove01.png" />
+    <Resource Include="Images\restore01.png" />
+    <Resource Include="Images\robo01.ico" />
+    <Resource Include="Images\robo01.png" />
+    <Resource Include="Images\robo01_16.png" />
+    <Resource Include="Images\robo01_32.png" />
+    <Resource Include="Images\robo02.png" />
+    <Resource Include="Images\sap01.ico" />
+    <Resource Include="Images\sap01.png" />
+    <Resource Include="Images\sap01_16.png" />
+    <Resource Include="Images\sap01_32.png" />
+    <Resource Include="Images\save01.png" />
+    <Resource Include="Images\sp01.png" />
+    <Resource Include="Images\start01.ico" />
+    <Resource Include="Images\start01_16.png" />
+    <Resource Include="Images\start01_32.png" />
+    <Resource Include="Images\var01.ico" />
+    <Resource Include="Images\var01_16.png" />
+    <Resource Include="Images\var01_32.png" />
+    <Resource Include="Images\web01.png" />
+    <Resource Include="Images\while01.ico" />
+    <Resource Include="Images\while01_16.png" />
+    <Resource Include="Images\while01_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\r2rStudio.Activities.Base\JoJoSuite.Actions.Base.csproj">
+      <Project>{4a85d7fe-5eee-438e-9ea7-af6812a87bbd}</Project>
+      <Name>JoJoSuite.Actions.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Activities.Database.Design\JoJoSuite.Actions.Database.Design.csproj">
+      <Project>{b5fe6163-514a-421e-9349-979a0b73ea0d}</Project>
+      <Name>JoJoSuite.Actions.Database.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Activities.Database\JoJoSuite.Actions.Database.csproj">
+      <Project>{7ee258ec-3018-4974-81e1-052a81635742}</Project>
+      <Name>JoJoSuite.Actions.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Activities.Email.Design\JoJoSuite.Actions.Email.Design.csproj">
+      <Project>{0551a71d-a341-4ebd-86f3-b3865bbf0cca}</Project>
+      <Name>JoJoSuite.Actions.Email.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Activities.Email\JoJoSuite.Actions.Email.csproj">
+      <Project>{013cf721-70f4-43a8-8638-95ed8aa6fc41}</Project>
+      <Name>JoJoSuite.Actions.Email</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Activities.IO.Design\JoJoSuite.Actions.IO.Design.csproj">
+      <Project>{23fa6dd4-46a6-4656-a3e7-c4584273d5d3}</Project>
+      <Name>JoJoSuite.Actions.IO.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Activities.IO\JoJoSuite.Actions.IO.csproj">
+      <Project>{D5A387DA-9FAD-49C3-90BD-5A4B94E24CBA}</Project>
+      <Name>JoJoSuite.Actions.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Activities.Office.Excel.Design\JoJoSuite.Actions.Office.Excel.Design.csproj">
+      <Project>{9bd5efcc-914a-451e-b1a8-4e681f10e19d}</Project>
+      <Name>JoJoSuite.Actions.Office.Excel.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Activities.Office.Excel\JoJoSuite.Actions.Office.Excel.csproj">
+      <Project>{77621904-e0ac-452e-b52c-0a668a4f8f3d}</Project>
+      <Name>JoJoSuite.Actions.Office.Excel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Activities.Web.Design\JoJoSuite.Actions.Web.Design.csproj">
+      <Project>{3c107e12-4d4d-4551-b723-6e5db93da4e2}</Project>
+      <Name>JoJoSuite.Actions.Web.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Activities.Web\JoJoSuite.Actions.Web.csproj">
+      <Project>{599c1a44-66c6-4af4-a0ed-04eaed04eeca}</Project>
+      <Name>JoJoSuite.Actions.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Base\JoJoSuite.Base.csproj">
+      <Project>{7255ac9a-ee5d-40bb-9539-13de7420f87d}</Project>
+      <Name>JoJoSuite.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Control.Base\JoJoSuite.Control.Base.csproj">
+      <Project>{5c9d3da4-17ce-472a-b563-add3eb9c3817}</Project>
+      <Name>JoJoSuite.Control.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Library.IO\JoJoSuite.Library.IO.csproj">
+      <Project>{7cba2b1a-f982-4748-8242-837d1bf3150b}</Project>
+      <Name>JoJoSuite.Library.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Library.Mail.Exchange\JoJoSuite.Library.Mail.Exchange.csproj">
+      <Project>{66634fab-6818-4d0f-b500-e24649269f83}</Project>
+      <Name>JoJoSuite.Library.Mail.Exchange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Library.Office.Excel\r2rStudio.Library.Office.Excel.csproj">
+      <Project>{93a9de96-27b8-4988-b567-32cacdc91482}</Project>
+      <Name>r2rStudio.Library.Office.Excel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Library.Web\JoJoSuite.Library.Web.csproj">
+      <Project>{7bef6f06-a6f2-4a5a-ae8e-00765ed89dab}</Project>
+      <Name>JoJoSuite.Library.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Browser.png" />
+    <Resource Include="Images\QuestionMark.png" />
+    <Resource Include="Images\Webclick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Browser.png" />
+    <Resource Include="QuestionMark.png" />
+    <Resource Include="Webclick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Code_50px.png" />
+    <Resource Include="Images\Delete.ico" />
+    <Resource Include="Images\Delete_16.png" />
+    <Resource Include="Images\download01.png" />
+    <Resource Include="Images\Downloads Folder_52px.png" />
+    <Resource Include="Images\Downloads_64px.png" />
+    <Resource Include="Images\Download_48px.png" />
+    <Resource Include="Images\err01.png" />
+    <Resource Include="Images\Excel.ico" />
+    <Resource Include="Images\Excel_16.png" />
+    <Resource Include="Images\Settings.ico" />
+    <Resource Include="Images\Settings_16.png" />
+    <Resource Include="Images\validate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Desktop Download_50px.png" />
+    <Resource Include="Images\Downloads_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Go Back_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hp01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\HP_48px.png" />
+    <Resource Include="Images\HP_50px.png" />
+    <Resource Include="Images\HP_64px.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\cef.redist.x64.3.2987.1601\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.2987.1601\build\cef.redist.x64.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cef.redist.x64.3.2987.1601\build\cef.redist.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.3.2987.1601\build\cef.redist.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets'))" />
+  </Target>
+  <Import Project="..\packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

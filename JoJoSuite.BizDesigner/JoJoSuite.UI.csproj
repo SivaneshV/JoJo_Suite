@@ -1,0 +1,1157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54313249-E8DD-4E49-B164-A99C71E402AE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JoJoSuite.UI</RootNamespace>
+    <AssemblyName>JoJoSuite.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\r202aicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.9.9\lib\net45\AngleSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ASquare.WindowsTaskScheduler, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ASquare.WindowsTaskScheduler.1.6.0.0\lib\Net45\ASquare.WindowsTaskScheduler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.4.1.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.32.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.32\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.ActiveDirectory.GraphClient, Version=2.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.ActiveDirectory.GraphClient.2.1.0\lib\portable-net4+sl5+win+wpa+wp8\Microsoft.Azure.ActiveDirectory.GraphClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.8.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Graph, Version=1.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Graph.1.14.0\lib\net45\Microsoft.Graph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Graph.Core, Version=1.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Graph.Core.1.14.0\lib\net45\Microsoft.Graph.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="microsoft.identitymodel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.7.0.0\lib\net35\microsoft.identitymodel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.2.4\lib\net451\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.2.4\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.2.4\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Client.Policy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.Office.Client.Policy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Client.TranslationServices, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.Office.Client.TranslationServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.SharePoint.Tools, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.Office.SharePoint.Tools.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Online.SharePoint.Client.Tenant, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.Online.SharePoint.Client.Tenant.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ProjectServer.Client, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.ProjectServer.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.SharePoint.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.DocumentManagement, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.SharePoint.Client.DocumentManagement.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Publishing, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.SharePoint.Client.Publishing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime.Windows, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.SharePoint.Client.Runtime.Windows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.SharePoint.Client.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search.Applications, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.SharePoint.Client.Search.Applications.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Taxonomy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.SharePoint.Client.Taxonomy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.UserProfiles, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.SharePoint.Client.UserProfiles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.WorkflowServices, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePointOnline.CSOM.16.1.20211.12000\lib\net45\Microsoft.SharePoint.Client.WorkflowServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.TaskScheduler">
+      <HintPath>..\packages\Microsoft.Win32.TaskScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.7.0.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="r2rStudio.Activities.Database.Design">
+      <HintPath>..\SupportingDLLs\r2rStudio.Activities.Database.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="SharePointPnP.IdentityModel.Extensions, Version=1.2.4.0, Culture=neutral, PublicKeyToken=5e633289e95c321a, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharePointPnP.IdentityModel.Extensions.1.2.4\lib\net45\SharePointPnP.IdentityModel.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Core.Presentation" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.2.4\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.SelfHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.SelfHost.5.2.7\lib\net45\System.Web.Http.SelfHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.0\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AlertWindow.xaml.cs">
+      <DependentUpon>AlertWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="BotBlankWindow.xaml.cs">
+      <DependentUpon>BotBlankWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BotRunWindow.xaml.cs">
+      <DependentUpon>BotRunWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPwdWindow.xaml.cs">
+      <DependentUpon>EditPwdWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelTemplateWindow.xaml.cs">
+      <DependentUpon>ExcelTemplateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirstWindow.xaml.cs">
+      <DependentUpon>FirstWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PleaseWait.xaml.cs">
+      <DependentUpon>PleaseWait.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PwdWindow.xaml.cs">
+      <DependentUpon>PwdWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeWindow.xaml.cs">
+      <DependentUpon>CodeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecorderCodeGenerator.xaml.cs">
+      <DependentUpon>RecorderCodeGenerator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecorderIntro.xaml.cs">
+      <DependentUpon>RecorderIntro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecorderSettings.xaml.cs">
+      <DependentUpon>RecorderSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecorderWindow.xaml.cs">
+      <DependentUpon>RecorderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmailTemplateWindow.xaml.cs">
+      <DependentUpon>EmailTemplateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SapImportWindow.xaml.cs">
+      <DependentUpon>SapImportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="r2rMsgBox.cs" />
+    <Compile Include="RegionWindow.xaml.cs">
+      <DependentUpon>RegionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RoleWindow.xaml.cs">
+      <DependentUpon>RoleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShareBotWindow.xaml.cs">
+      <DependentUpon>ShareBotWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SparkRecorder.xaml.cs">
+      <DependentUpon>SparkRecorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SplashWindow.xaml.cs">
+      <DependentUpon>SplashWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Task.xaml.cs">
+      <DependentUpon>Task.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskDetailWindow.xaml.cs">
+      <DependentUpon>TaskDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskWindow.xaml.cs">
+      <DependentUpon>TaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeamWindow.xaml.cs">
+      <DependentUpon>TeamWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThemeWindow.xaml.cs">
+      <DependentUpon>ThemeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WebInspectWindow.xaml.cs">
+      <DependentUpon>WebInspectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeViewWindow.xaml.cs">
+      <DependentUpon>CodeViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AlertWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BotBlankWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BotRunWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPwdWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExcelTemplateWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FirstWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PleaseWait.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PwdWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CodeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RecorderCodeGenerator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RecorderIntro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RecorderSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RecorderWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EmailTemplateWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SapImportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="RegionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RoleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShareBotWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SparkRecorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SplashWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Task.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TaskDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TaskWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TeamWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WebInspectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CodeViewWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Extensions\Chrome.crx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Extensions\Chrome.pem" />
+    <None Include="Extensions\Chrome\manifest.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\access01.png" />
+    <Resource Include="Images\add01.png" />
+    <Resource Include="Images\assign01_16.png" />
+    <Resource Include="Images\assign01_32.png" />
+    <Resource Include="Images\bg\bg01.jpg" />
+    <Resource Include="Images\bg\bg02.jpg" />
+    <Resource Include="Images\bg\bg03.jpg" />
+    <Resource Include="Images\bg\bg04.jpg" />
+    <Resource Include="Images\bg\bg05.jpg" />
+    <Resource Include="Images\bg\bg06.jpg" />
+    <Resource Include="Images\bg\bg07.jpg" />
+    <Resource Include="Images\bg\bg08.jpg" />
+    <Resource Include="Images\bg\bg09.jpg" />
+    <Resource Include="Images\bg\bg10.jpg" />
+    <Resource Include="Images\Browser.png" />
+    <Resource Include="Images\click01_16.png" />
+    <Resource Include="Images\click01_32.png" />
+    <Resource Include="Images\close01.png" />
+    <Resource Include="Images\Code_50px.png" />
+    <Resource Include="Images\collection01_16.png" />
+    <Resource Include="Images\collection01_32.png" />
+    <Resource Include="Images\copy01.png" />
+    <Resource Include="Images\cut01.png" />
+    <Resource Include="Images\db01.png" />
+    <Resource Include="Images\dbcmd01_16.png" />
+    <Resource Include="Images\dbcmd01_32.png" />
+    <Resource Include="Images\dbconn01_16.png" />
+    <Resource Include="Images\dbconn01_32.png" />
+    <Resource Include="Images\dbdata01_16.png" />
+    <Resource Include="Images\dbdata01_32.png" />
+    <Resource Include="Images\Delete_16.png" />
+    <Resource Include="Images\Desktop Download_50px.png" />
+    <Resource Include="Images\download01.png" />
+    <Resource Include="Images\Downloads Folder_52px.png" />
+    <Resource Include="Images\Downloads_50px.png" />
+    <Resource Include="Images\Downloads_64px.png" />
+    <Resource Include="Images\Download_48px.png" />
+    <Resource Include="Images\element01_16.png" />
+    <Resource Include="Images\element01_32.png" />
+    <Resource Include="Images\email01.png" />
+    <Resource Include="Images\email01_16.png" />
+    <Resource Include="Images\email01_32.png" />
+    <Resource Include="Images\err01.png" />
+    <Resource Include="Images\excel01.png" />
+    <Resource Include="Images\excel01_16.png" />
+    <Resource Include="Images\excel01_32.png" />
+    <Resource Include="Images\Excel_16.png" />
+    <Resource Include="Images\fav01.png" />
+    <Resource Include="Images\for01_16.png" />
+    <Resource Include="Images\for01_32.png" />
+    <Resource Include="Images\for02_16.png" />
+    <Resource Include="Images\for02_32.png" />
+    <Resource Include="Images\Go Back_52px.png" />
+    <Resource Include="Images\if01_16.png" />
+    <Resource Include="Images\if01_32.png" />
+    <Resource Include="Images\logic01.png" />
+    <Resource Include="Images\logic02_16.png" />
+    <Resource Include="Images\logic02_32.png" />
+    <Resource Include="Images\login01_16.png" />
+    <Resource Include="Images\login01_32.png" />
+    <Resource Include="Images\max01.png" />
+    <Resource Include="Images\min01.png" />
+    <Resource Include="Images\new01.png" />
+    <Resource Include="Images\office01.png" />
+    <Resource Include="Images\ok01.png" />
+    <Resource Include="Images\open01.png" />
+    <Resource Include="Images\outlook01.png" />
+    <Resource Include="Images\paste01.png" />
+    <Resource Include="Images\pdf01.png" />
+    <Resource Include="Images\pdf01_16.png" />
+    <Resource Include="Images\pdf01_32.png" />
+    <Resource Include="Images\pp01.png" />
+    <Resource Include="Images\QuestionMark.png" />
+    <Resource Include="Images\recent01.png" />
+    <Resource Include="Images\remove01.png" />
+    <Resource Include="Images\restore01.png" />
+    <Resource Include="Images\robo01.png" />
+    <Resource Include="Images\robo01_16.png" />
+    <Resource Include="Images\robo01_32.png" />
+    <Resource Include="Images\robo02.png" />
+    <Resource Include="Images\sap01.png" />
+    <Resource Include="Images\sap01_16.png" />
+    <Resource Include="Images\sap01_32.png" />
+    <Resource Include="Images\save01.png" />
+    <Resource Include="Images\Settings_16.png" />
+    <Resource Include="Images\share02.png" />
+    <Resource Include="Images\sp01.png" />
+    <Resource Include="Images\start01_16.png" />
+    <Resource Include="Images\start01_32.png" />
+    <Resource Include="Images\validate.png" />
+    <Resource Include="Images\var01_16.png" />
+    <Resource Include="Images\var01_32.png" />
+    <Resource Include="Images\web01.png" />
+    <Resource Include="Images\web02.png" />
+    <Resource Include="Images\web03.png" />
+    <Resource Include="Images\Webclick.png" />
+    <Resource Include="Images\while01_16.png" />
+    <Resource Include="Images\while01_32.png" />
+    <Resource Include="Images\win01.png" />
+    <Resource Include="Images\win_close01.png" />
+    <Resource Include="Images\win_max01.png" />
+    <Resource Include="Images\win_min01.png" />
+    <Resource Include="Images\win_restore01.png" />
+    <Resource Include="Images\word01.png" />
+    <Resource Include="Images\ws01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\share01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bot01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Go Back_52px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\schedule01.png" />
+    <Resource Include="Images\schedule02.png" />
+    <Resource Include="Images\user01.png" />
+    <Resource Include="Images\users01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\role01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\r2r01a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\r2r01a.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\reload01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Email\Attach.png" />
+    <Resource Include="Images\Icons\Email\Connect.png" />
+    <Resource Include="Images\Icons\Email\Email.png" />
+    <Resource Include="Images\Icons\Email\Read.png" />
+    <Resource Include="Images\Icons\Email\Send.png" />
+    <Resource Include="Images\Icons\Excel\AddColumn.png" />
+    <Resource Include="Images\Icons\Excel\AddRow.png" />
+    <Resource Include="Images\Icons\Excel\AddSheet.png" />
+    <Resource Include="Images\Icons\Excel\CopyPaste.png" />
+    <Resource Include="Images\Icons\Excel\CreateTable.png" />
+    <Resource Include="Images\Icons\Excel\CreateWorkbook.png" />
+    <Resource Include="Images\Icons\Excel\DeleteColumn.png" />
+    <Resource Include="Images\Icons\Excel\DeleteRow.png" />
+    <Resource Include="Images\Icons\Excel\DeleteWorkbook.png" />
+    <Resource Include="Images\Icons\Excel\Excel.png" />
+    <Resource Include="Images\Icons\Excel\Filter.png" />
+    <Resource Include="Images\Icons\Excel\Formula.png" />
+    <Resource Include="Images\Icons\Excel\GetValue.png" />
+    <Resource Include="Images\Icons\Excel\InsertPivotTable.png" />
+    <Resource Include="Images\Icons\Excel\OpenWorkbook.png" />
+    <Resource Include="Images\Icons\Excel\ReadWriteTable.png" />
+    <Resource Include="Images\Icons\Excel\RefreshPivotTable.png" />
+    <Resource Include="Images\Icons\Excel\Save.png" />
+    <Resource Include="Images\Icons\Excel\SetSheet.png" />
+    <Resource Include="Images\Icons\Excel\SetValue.png" />
+    <Resource Include="Images\Icons\Excel\ShowExcel.png" />
+    <Resource Include="Images\Icons\Excel\SortData.png" />
+    <Resource Include="Images\Icons\Home\Arguments.png" />
+    <Resource Include="Images\Icons\Home\New.png" />
+    <Resource Include="Images\Icons\Home\Open.png" />
+    <Resource Include="Images\Icons\Home\Run.png" />
+    <Resource Include="Images\Icons\Home\Save.png" />
+    <Resource Include="Images\Icons\IO\CreateFile.png" />
+    <Resource Include="Images\Icons\IO\CreateFolder.png" />
+    <Resource Include="Images\Icons\IO\DeleteFile.png" />
+    <Resource Include="Images\Icons\IO\DeleteFolder.png" />
+    <Resource Include="Images\Icons\IO\FileExists.png" />
+    <Resource Include="Images\Icons\IO\FolderExists.png" />
+    <Resource Include="Images\Icons\IO\IO.png" />
+    <Resource Include="Images\Icons\IO\OpenFile.png" />
+    <Resource Include="Images\Icons\Web\Browser.png" />
+    <Resource Include="Images\Icons\Web\Click.png" />
+    <Resource Include="Images\Icons\Web\Collection.png" />
+    <Resource Include="Images\Icons\Web\GetText.png" />
+    <Resource Include="Images\Icons\Web\SetText.png" />
+    <Resource Include="Images\Icons\Web\Web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Icons\db\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Save02.png" />
+    <Resource Include="Images\Share03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Argument.png" />
+    <Resource Include="Images\cancel01.png" />
+    <Resource Include="Images\Debug01.png" />
+    <Resource Include="Images\Delete.png" />
+    <Resource Include="Images\Edit.png" />
+    <Resource Include="Images\Home.png" />
+    <Resource Include="Images\New.png" />
+    <Resource Include="Images\Reload.png" />
+    <Resource Include="Images\Run01.png" />
+    <Resource Include="Images\ScheduleList01.png" />
+    <Resource Include="Images\ScheduleNew01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Admin.png" />
+    <Resource Include="Images\Role02.png" />
+    <Resource Include="Images\User02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\R202a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\R2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Role03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Argument01.png" />
+    <Resource Include="Images\Folder.png" />
+    <Resource Include="Images\Login.png" />
+    <Resource Include="Images\Logout.png" />
+    <Resource Include="Images\UserAccount.png" />
+    <Resource Include="Images\UserGroups.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Debug02.png" />
+    <Resource Include="Images\Region03.png" />
+    <Resource Include="Images\Run.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Argument02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Argument03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Debug03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Region01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Team01.png" />
+    <Resource Include="Images\User03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\R1.png" />
+    <Resource Include="Images\R10.png" />
+    <Resource Include="Images\R11.png" />
+    <Resource Include="Images\R12.png" />
+    <Resource Include="Images\R13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\R3.png" />
+    <Resource Include="Images\R4.png" />
+    <Resource Include="Images\R5.png" />
+    <Resource Include="Images\R6.png" />
+    <Resource Include="Images\R7.png" />
+    <Resource Include="Images\R8.png" />
+    <Resource Include="Images\R9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Arguments.png" />
+    <Resource Include="Images\BotRegion.png" />
+    <Resource Include="Images\BotRun.png" />
+    <Resource Include="Images\BotSave.png" />
+    <Resource Include="Images\BotShare.png" />
+    <Resource Include="Images\Debug.png" />
+    <Resource Include="Images\ImportSAPscript.png" />
+    <Resource Include="Images\NewSchedulelist.png" />
+    <Resource Include="Images\Role.png" />
+    <Resource Include="Images\Role1.png" />
+    <Resource Include="Images\ScheduleList.png" />
+    <Resource Include="Images\User.png" />
+    <Resource Include="Images\Users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BotHistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\full01.png" />
+    <Resource Include="Images\view01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\team.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\region.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\key01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\r202aicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\Logic_Assign.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Resource Include="Icons\Logic_Delay.png" />
+    <Resource Include="Icons\Logic_DoWhile.png" />
+    <Resource Include="Icons\Logic_FlowDecision.png" />
+    <Resource Include="Icons\Logic_ForEach.png" />
+    <Resource Include="Icons\Logic_IF.png" />
+    <Resource Include="Icons\Logic_InvokeMethod.png" />
+    <Resource Include="Icons\Logic_Parallel.png" />
+    <Resource Include="Icons\Logic_Sequence.png" />
+    <Resource Include="Icons\Logic_TerminateWorkflow.png" />
+    <Resource Include="Icons\Logic_TryCatch.png" />
+    <Resource Include="Icons\Logic_While.png" />
+    <Resource Include="Icons\Logic_Writeline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\recorder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\recoder1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Recording.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Extensions\Chrome\background.js" />
+    <Content Include="Extensions\Chrome\core.css" />
+    <Content Include="Extensions\Chrome\core.js" />
+    <Content Include="Extensions\Chrome\html2canvas.min.js" />
+    <Content Include="Extensions\Chrome\Main.js" />
+    <Content Include="Extensions\Chrome\Spark.js" />
+    <Resource Include="Working.gif" />
+    <None Include="IntroImages\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="IntroImages\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="IntroImages\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Images\email-32.png" />
+    <Resource Include="Images\excel-32.png" />
+    <Resource Include="Images\CodeView32.png" />
+    <Resource Include="Icons\logo_only.png" />
+    <Resource Include="Icons\logo_head.png" />
+    <Resource Include="Icons\AddColumn.png" />
+    <Resource Include="Icons\AddRow.png" />
+    <Resource Include="Icons\AddSheet.png" />
+    <Resource Include="Icons\Attach.png" />
+    <Resource Include="Icons\Browser.png" />
+    <Resource Include="Icons\Click.png" />
+    <Resource Include="Icons\Collection.png" />
+    <Resource Include="Icons\Connect.png" />
+    <Resource Include="Icons\CopyPaste.png" />
+    <Resource Include="Icons\CreateFile.png" />
+    <Resource Include="Icons\CreateFolder.png" />
+    <Resource Include="Icons\CreateTable.png" />
+    <Resource Include="Icons\CreateWorkbook.png" />
+    <Resource Include="Icons\DeleteColumn.png" />
+    <Resource Include="Icons\DeleteFile.png" />
+    <Resource Include="Icons\DeleteFolder.png" />
+    <Resource Include="Icons\DeleteRow.png" />
+    <Resource Include="Icons\DeleteWorkbook.png" />
+    <Resource Include="Icons\Email.png" />
+    <Resource Include="Icons\Excel.png" />
+    <Resource Include="Icons\FileExists.png" />
+    <Resource Include="Icons\Filter.png" />
+    <Resource Include="Icons\FolderExists.png" />
+    <Resource Include="Icons\Formula.png" />
+    <Resource Include="Icons\GetText.png" />
+    <Resource Include="Icons\GetValue.png" />
+    <Resource Include="Icons\InsertPivotTable.png" />
+    <Resource Include="Icons\IO.png" />
+    <Resource Include="Icons\OpenFile.png" />
+    <Resource Include="Icons\OpenWorkbook.png" />
+    <Resource Include="Icons\Read.png" />
+    <Resource Include="Icons\ReadWriteTable.png" />
+    <Resource Include="Icons\RefreshPivotTable.png" />
+    <Resource Include="Icons\Save.png" />
+    <Resource Include="Icons\Send.png" />
+    <Resource Include="Icons\SetSheet.png" />
+    <Resource Include="Icons\SetText.png" />
+    <Resource Include="Icons\SetValue.png" />
+    <Resource Include="Icons\ShowExcel.png" />
+    <Resource Include="Icons\SortData.png" />
+    <Resource Include="Icons\Web.png" />
+    <Resource Include="Icons\Database_ActionQuery.png" />
+    <Resource Include="Icons\Database_ConnectToDBServer.png" />
+    <Resource Include="Icons\Database_SelectQuery.png" />
+    <Resource Include="Icons\Email_ConnecttoEmailServer.png" />
+    <Resource Include="Icons\Email_OpenEmailAttachments.png" />
+    <Resource Include="Icons\Email_ReadEmails.png" />
+    <Resource Include="Icons\Email_SendEmail.png" />
+    <Resource Include="Icons\Excel_AddColumn.png" />
+    <Resource Include="Icons\Excel_AddRow.png" />
+    <Resource Include="Icons\Excel_AddSheet.png" />
+    <Resource Include="Icons\Excel_CopyPaste.png" />
+    <Resource Include="Icons\Excel_CreateExcelFile.png" />
+    <Resource Include="Icons\Excel_CreateTable.png" />
+    <Resource Include="Icons\Excel_DatasetToExcel.png" />
+    <Resource Include="Icons\Excel_DeleteColumn.png" />
+    <Resource Include="Icons\Excel_DeleteRow.png" />
+    <Resource Include="Icons\Excel_Formula.png" />
+    <Resource Include="Icons\Excel_OpenExcelFile.png" />
+    <Resource Include="Icons\Excel_ReadCellValue.png" />
+    <Resource Include="Icons\Excel_ReadDataset.png" />
+    <Resource Include="Icons\Excel_RunMacro.png" />
+    <Resource Include="Icons\Excel_SaveExcel.png" />
+    <Resource Include="Icons\Excel_SelectSheet.png" />
+    <Resource Include="Icons\Excel_ShowExcel.png" />
+    <Resource Include="Icons\Excel_WriteCellValue.png" />
+    <Resource Include="Icons\IO_CheckFileExists.png" />
+    <Resource Include="Icons\IO_CheckFolderExists.png" />
+    <Resource Include="Icons\IO_CopyPasteFile.png" />
+    <Resource Include="Icons\IO_CreateFile.png" />
+    <Resource Include="Icons\IO_CreateFolder.png" />
+    <Resource Include="Icons\IO_DeleteFile.png" />
+    <Resource Include="Icons\IO_DeleteFolder.png" />
+    <Resource Include="Icons\IO_InputBox.png" />
+    <Resource Include="Icons\IO_MoveFile.png" />
+    <Resource Include="Icons\IO_OpenFile.png" />
+    <Resource Include="Icons\Sharepoint_CreateFolder.png" />
+    <Resource Include="Icons\Sharepoint_Download.png" />
+    <Resource Include="Icons\Sharepoint_Upload.png" />
+    <Resource Include="Icons\PDF_To_Excel.png" />
+    <Content Include="Sounds\ButtonClick.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Recorded.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Welcome.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JoJoSuite.Activities.Base\JoJoSuite.Actions.Base.csproj">
+      <Project>{4a85d7fe-5eee-438e-9ea7-af6812a87bbd}</Project>
+      <Name>JoJoSuite.Actions.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.ClipBoard.Design\JoJoSuite.Actions.ClipBoard.Design.csproj">
+      <Project>{f4cd3f3b-4a0e-4c65-9953-43f605946455}</Project>
+      <Name>JoJoSuite.Actions.ClipBoard.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.ClipBoard\JoJoSuite.Actions.ClipBoard.csproj">
+      <Project>{69cd980f-7323-4436-a771-96aa3ecd5e09}</Project>
+      <Name>JoJoSuite.Actions.ClipBoard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Common.Design\JoJoSuite.Actions.Common.Design.csproj">
+      <Project>{99996492-d9c9-49c8-818a-47b622a942cc}</Project>
+      <Name>JoJoSuite.Actions.Common.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Common\JoJoSuite.Actions.Common.csproj">
+      <Project>{3c702d07-c978-44be-86c6-3eb366cbec22}</Project>
+      <Name>JoJoSuite.Actions.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Database.Design\JoJoSuite.Actions.Database.Design.csproj">
+      <Project>{b5fe6163-514a-421e-9349-979a0b73ea0d}</Project>
+      <Name>JoJoSuite.Actions.Database.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Database\JoJoSuite.Actions.Database.csproj">
+      <Project>{7ee258ec-3018-4974-81e1-052a81635742}</Project>
+      <Name>JoJoSuite.Actions.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Email.Design\JoJoSuite.Actions.Email.Design.csproj">
+      <Project>{0551a71d-a341-4ebd-86f3-b3865bbf0cca}</Project>
+      <Name>JoJoSuite.Actions.Email.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Email\JoJoSuite.Actions.Email.csproj">
+      <Project>{013cf721-70f4-43a8-8638-95ed8aa6fc41}</Project>
+      <Name>JoJoSuite.Actions.Email</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.IO.Design\JoJoSuite.Actions.IO.Design.csproj">
+      <Project>{23fa6dd4-46a6-4656-a3e7-c4584273d5d3}</Project>
+      <Name>JoJoSuite.Actions.IO.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.IO\JoJoSuite.Actions.IO.csproj">
+      <Project>{d5a387da-9fad-49c3-90bd-5a4b94e24cba}</Project>
+      <Name>JoJoSuite.Actions.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Office.Excel.Design\JoJoSuite.Actions.Office.Excel.Design.csproj">
+      <Project>{9bd5efcc-914a-451e-b1a8-4e681f10e19d}</Project>
+      <Name>JoJoSuite.Actions.Office.Excel.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Office.Excel\JoJoSuite.Actions.Office.Excel.csproj">
+      <Project>{77621904-e0ac-452e-b52c-0a668a4f8f3d}</Project>
+      <Name>JoJoSuite.Actions.Office.Excel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.SAP.Design\JoJoSuite.Actions.SAP.Design.csproj">
+      <Project>{0e0bd994-f058-4d68-b0cf-6d8cf2c415a8}</Project>
+      <Name>JoJoSuite.Actions.SAP.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.SAP\JoJoSuite.Actions.SAP.csproj">
+      <Project>{70dd301a-cd45-4b05-917d-435d88ec8112}</Project>
+      <Name>JoJoSuite.Actions.SAP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Security.Design\JoJoSuite.Actions.Security.Design.csproj">
+      <Project>{c9249878-e24d-4d93-969f-a71fab5114e1}</Project>
+      <Name>JoJoSuite.Actions.Security.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Security\JoJoSuite.Actions.Security.csproj">
+      <Project>{913a6daf-f1c2-48f5-a3c3-c409bb2db24f}</Project>
+      <Name>JoJoSuite.Actions.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.SharePoint.Design\JoJoSuite.Actions.SharePoint.Design.csproj">
+      <Project>{2f30737d-ac55-45d4-8c19-b229abd9fa45}</Project>
+      <Name>JoJoSuite.Actions.SharePoint.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.SharePoint\JoJoSuite.Actions.SharePoint.csproj">
+      <Project>{d8284d15-ff70-4854-836b-daf6ad57a79d}</Project>
+      <Name>JoJoSuite.Actions.SharePoint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Tracking.Design\JoJoSuite.Actions.Tracking.Design.csproj">
+      <Project>{43cbbd80-7351-46b4-a285-30564440e1b4}</Project>
+      <Name>JoJoSuite.Actions.Tracking.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Tracking\JoJoSuite.Actions.Tracking.csproj">
+      <Project>{55d2c35b-7b0c-4308-8564-a0616f05a3b8}</Project>
+      <Name>JoJoSuite.Actions.Tracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Web.Design\JoJoSuite.Actions.Web.Design.csproj">
+      <Project>{3c107e12-4d4d-4551-b723-6e5db93da4e2}</Project>
+      <Name>JoJoSuite.Actions.Web.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Activities.Web\JoJoSuite.Actions.Web.csproj">
+      <Project>{599c1a44-66c6-4af4-a0ed-04eaed04eeca}</Project>
+      <Name>JoJoSuite.Actions.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Business.Lib2\JoJoSuite.Lib.csproj">
+      <Project>{712c4e63-febf-4840-ac19-1bc408a89cad}</Project>
+      <Name>JoJoSuite.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Db\JoJoSuite.Database.csproj">
+      <Project>{72fd07a7-777f-4cb3-8b6c-9ea12894455f}</Project>
+      <Name>JoJoSuite.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Base\JoJoSuite.Library.Base.csproj">
+      <Project>{556350a7-71fb-4a71-a6eb-8629f1815505}</Project>
+      <Name>JoJoSuite.Library.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.ClipBoard\JoJoSuite.Library.ClipBoard.csproj">
+      <Project>{95df5ac8-41cc-45e6-b1be-09f573bfc644}</Project>
+      <Name>JoJoSuite.Library.ClipBoard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Database\JoJoSuite.Library.Database.csproj">
+      <Project>{16dd866d-0814-4173-bb3b-e6ec41178c25}</Project>
+      <Name>JoJoSuite.Library.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Email\JoJoSuite.Library.Email.csproj">
+      <Project>{d5414c24-75c0-44eb-9eb1-8f8bdac02f89}</Project>
+      <Name>JoJoSuite.Library.Email</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.IO\JoJoSuite.Library.IO.csproj">
+      <Project>{7cba2b1a-f982-4748-8242-837d1bf3150b}</Project>
+      <Name>JoJoSuite.Library.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Mail.Exchange\JoJoSuite.Library.Mail.Exchange.csproj">
+      <Project>{66634fab-6818-4d0f-b500-e24649269f83}</Project>
+      <Name>JoJoSuite.Library.Mail.Exchange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Office.Access\JoJoSuite.Library.Office.Access.csproj">
+      <Project>{fdac62ae-a63a-455d-a4a4-71fcce2306cc}</Project>
+      <Name>JoJoSuite.Library.Office.Access</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Office.Excel\JoJoSuite.Library.Office.Excel.csproj">
+      <Project>{93a9de96-27b8-4988-b567-32cacdc91482}</Project>
+      <Name>JoJoSuite.Library.Office.Excel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Office.Outlook\JoJoSuite.Library.Office.Outlook.csproj">
+      <Project>{143a3884-2de9-4b0d-998b-25d95cc91723}</Project>
+      <Name>JoJoSuite.Library.Office.Outlook</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Office.PowerPoint\JoJoSuite.Library.Office.PowerPoint.csproj">
+      <Project>{aefc233f-69cd-4e11-814b-648d171becf9}</Project>
+      <Name>JoJoSuite.Library.Office.PowerPoint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Office.Word\JoJoSuite.Library.Office.Word.csproj">
+      <Project>{974bbbd5-66a9-49fe-8de7-13d9a858f2bd}</Project>
+      <Name>JoJoSuite.Library.Office.Word</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Pdf\JoJoSuite.Library.Pdf.csproj">
+      <Project>{1b1d5cbc-9d12-40bf-85b6-f04c07afe6df}</Project>
+      <Name>JoJoSuite.Library.Pdf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.SAP2\JoJoSuite.Library.SAP2.vbproj">
+      <Project>{54b228f1-6713-43ba-8ab2-3b0eb77d4b2a}</Project>
+      <Name>JoJoSuite.Library.SAP2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Security\JoJoSuite.Library.Security.csproj">
+      <Project>{e62760cc-0b86-4709-9b4d-4a68ddc7bff0}</Project>
+      <Name>JoJoSuite.Library.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.SharePoint\JoJoSuite.Library.SharePoint.csproj">
+      <Project>{87a8dcb6-58e5-4a92-a877-121a3fbc4bd0}</Project>
+      <Name>JoJoSuite.Library.SharePoint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Tracking\JoJoSuite.Library.Tracking.csproj">
+      <Project>{51487ef5-4fa6-4f1e-8329-822f67c4f939}</Project>
+      <Name>JoJoSuite.Library.Tracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JoJoSuite.Library.Web\JoJoSuite.Library.Web.csproj">
+      <Project>{7bef6f06-a6f2-4a5a-ae8e-00765ed89dab}</Project>
+      <Name>JoJoSuite.Library.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

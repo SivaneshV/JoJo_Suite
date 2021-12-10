@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C9D3DA4-17CE-472A-B563-ADD3EB9C3817}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JoJoSuite.Control.Base</RootNamespace>
+    <AssemblyName>JoJoSuite.Control.Base</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BaseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogicIfControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseControl.xaml.cs">
+      <DependentUpon>BaseControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogicIfControl.xaml.cs">
+      <DependentUpon>LogicIfControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\access01.png" />
+    <Resource Include="Images\add01.png" />
+    <Resource Include="Images\assign01.ico" />
+    <Resource Include="Images\assign01_16.png" />
+    <Resource Include="Images\assign01_32.png" />
+    <Resource Include="Images\click01.ico" />
+    <Resource Include="Images\click01_16.png" />
+    <Resource Include="Images\click01_32.png" />
+    <Resource Include="Images\close01.png" />
+    <Resource Include="Images\collection01.ico" />
+    <Resource Include="Images\collection01_16.png" />
+    <Resource Include="Images\collection01_32.png" />
+    <Resource Include="Images\copy01.png" />
+    <Resource Include="Images\cut01.png" />
+    <Resource Include="Images\db01.png" />
+    <Resource Include="Images\dbcmd01.ico" />
+    <Resource Include="Images\dbcmd01_16.png" />
+    <Resource Include="Images\dbcmd01_32.png" />
+    <Resource Include="Images\dbconn01.ico" />
+    <Resource Include="Images\dbconn01_16.png" />
+    <Resource Include="Images\dbconn01_32.png" />
+    <Resource Include="Images\dbdata01.ico" />
+    <Resource Include="Images\dbdata01_16.png" />
+    <Resource Include="Images\dbdata01_32.png" />
+    <Resource Include="Images\element01.ico" />
+    <Resource Include="Images\element01_16.png" />
+    <Resource Include="Images\element01_32.png" />
+    <Resource Include="Images\email01.ico" />
+    <Resource Include="Images\email01.png" />
+    <Resource Include="Images\email01_16.png" />
+    <Resource Include="Images\email01_32.png" />
+    <Resource Include="Images\excel01.ico" />
+    <Resource Include="Images\excel01.png" />
+    <Resource Include="Images\excel01_16.png" />
+    <Resource Include="Images\excel01_32.png" />
+    <Resource Include="Images\fav01.png" />
+    <Resource Include="Images\for01.ico" />
+    <Resource Include="Images\for01_16.png" />
+    <Resource Include="Images\for01_32.png" />
+    <Resource Include="Images\for02.ico" />
+    <Resource Include="Images\for02_16.png" />
+    <Resource Include="Images\for02_32.png" />
+    <Resource Include="Images\icons8_Add_File.ico" />
+    <Resource Include="Images\icons8_Add_File_16.png" />
+    <Resource Include="Images\icons8_Add_File_32.png" />
+    <Resource Include="Images\icons8_Attach.ico" />
+    <Resource Include="Images\icons8_Attach_16.png" />
+    <Resource Include="Images\icons8_Attach_32.png" />
+    <Resource Include="Images\icons8_Copy.ico" />
+    <Resource Include="Images\icons8_Copy_16.png" />
+    <Resource Include="Images\icons8_Copy_32.png" />
+    <Resource Include="Images\icons8_Cut.ico" />
+    <Resource Include="Images\icons8_Cut_16.png" />
+    <Resource Include="Images\icons8_Cut_32.png" />
+    <Resource Include="Images\icons8_Form.ico" />
+    <Resource Include="Images\icons8_Form_16.png" />
+    <Resource Include="Images\icons8_Form_32.png" />
+    <Resource Include="Images\icons8_Linked_Mailbox.ico" />
+    <Resource Include="Images\icons8_Linked_Mailbox_16.png" />
+    <Resource Include="Images\icons8_Linked_Mailbox_32.png" />
+    <Resource Include="Images\icons8_Login.ico" />
+    <Resource Include="Images\icons8_Login_16.png" />
+    <Resource Include="Images\icons8_Login_32.png" />
+    <Resource Include="Images\icons8_New_Copy.ico" />
+    <Resource Include="Images\icons8_New_Copy_16.png" />
+    <Resource Include="Images\icons8_New_Copy_32.png" />
+    <Resource Include="Images\icons8_New_File.ico" />
+    <Resource Include="Images\icons8_New_File_16.png" />
+    <Resource Include="Images\icons8_New_File_32.png" />
+    <Resource Include="Images\icons8_New_Post.ico" />
+    <Resource Include="Images\icons8_New_Post_16.png" />
+    <Resource Include="Images\icons8_New_Post_32.png" />
+    <Resource Include="Images\icons8_Paste.ico" />
+    <Resource Include="Images\icons8_Paste_16.png" />
+    <Resource Include="Images\icons8_Paste_32.png" />
+    <Resource Include="Images\icons8_Play.ico" />
+    <Resource Include="Images\icons8_Play_16.png" />
+    <Resource Include="Images\icons8_Play_32.png" />
+    <Resource Include="Images\icons8_Price_Tag.ico" />
+    <Resource Include="Images\icons8_Price_Tag_16.png" />
+    <Resource Include="Images\icons8_Price_Tag_32.png" />
+    <Resource Include="Images\icons8_SAP.ico" />
+    <Resource Include="Images\icons8_SAP2.ico" />
+    <Resource Include="Images\icons8_SAP2_16.png" />
+    <Resource Include="Images\icons8_SAP2_32.png" />
+    <Resource Include="Images\icons8_SAP_16.png" />
+    <Resource Include="Images\icons8_SAP_32.png" />
+    <Resource Include="Images\icons8_Save.ico" />
+    <Resource Include="Images\icons8_Save_16.png" />
+    <Resource Include="Images\icons8_Save_32.png" />
+    <Resource Include="Images\icons8_Settings.ico" />
+    <Resource Include="Images\icons8_Settings_16.png" />
+    <Resource Include="Images\icons8_Settings_32.png" />
+    <Resource Include="Images\icons8_Star_Filled.ico" />
+    <Resource Include="Images\icons8_Star_Filled_16.png" />
+    <Resource Include="Images\icons8_Star_Filled_32.png" />
+    <Resource Include="Images\icons8_Submit_for_Approval.ico" />
+    <Resource Include="Images\icons8_Submit_for_Approval_16.png" />
+    <Resource Include="Images\icons8_Submit_for_Approval_32.png" />
+    <Resource Include="Images\icons8_Table.ico" />
+    <Resource Include="Images\icons8_Table_16.png" />
+    <Resource Include="Images\icons8_Table_32.png" />
+    <Resource Include="Images\icons8_Variable.ico" />
+    <Resource Include="Images\icons8_Variable2.ico" />
+    <Resource Include="Images\icons8_Variable2_16.png" />
+    <Resource Include="Images\icons8_Variable2_32.png" />
+    <Resource Include="Images\icons8_Variable_16.png" />
+    <Resource Include="Images\icons8_Variable_32.png" />
+    <Resource Include="Images\if01.ico" />
+    <Resource Include="Images\if01_16.png" />
+    <Resource Include="Images\if01_32.png" />
+    <Resource Include="Images\logic01.png" />
+    <Resource Include="Images\logic02.ico" />
+    <Resource Include="Images\logic02_16.png" />
+    <Resource Include="Images\logic02_32.png" />
+    <Resource Include="Images\login01.ico" />
+    <Resource Include="Images\login01_16.png" />
+    <Resource Include="Images\login01_32.png" />
+    <Resource Include="Images\max01.png" />
+    <Resource Include="Images\min01.png" />
+    <Resource Include="Images\new01.png" />
+    <Resource Include="Images\office01.png" />
+    <Resource Include="Images\ok01.png" />
+    <Resource Include="Images\open01.png" />
+    <Resource Include="Images\outlook01.png" />
+    <Resource Include="Images\paste01.png" />
+    <Resource Include="Images\pdf01.ico" />
+    <Resource Include="Images\pdf01.png" />
+    <Resource Include="Images\pdf01_16.png" />
+    <Resource Include="Images\pdf01_32.png" />
+    <Resource Include="Images\pp01.png" />
+    <Resource Include="Images\recent01.png" />
+    <Resource Include="Images\remove01.png" />
+    <Resource Include="Images\restore01.png" />
+    <Resource Include="Images\robo01.ico" />
+    <Resource Include="Images\robo01.png" />
+    <Resource Include="Images\robo01_16.png" />
+    <Resource Include="Images\robo01_32.png" />
+    <Resource Include="Images\robo02.png" />
+    <Resource Include="Images\sap01.ico" />
+    <Resource Include="Images\sap01.png" />
+    <Resource Include="Images\sap01_16.png" />
+    <Resource Include="Images\sap01_32.png" />
+    <Resource Include="Images\save01.png" />
+    <Resource Include="Images\sp01.png" />
+    <Resource Include="Images\start01.ico" />
+    <Resource Include="Images\start01_16.png" />
+    <Resource Include="Images\start01_32.png" />
+    <Resource Include="Images\var01.ico" />
+    <Resource Include="Images\var01_16.png" />
+    <Resource Include="Images\var01_32.png" />
+    <Resource Include="Images\web01.png" />
+    <Resource Include="Images\while01.ico" />
+    <Resource Include="Images\while01_16.png" />
+    <Resource Include="Images\while01_32.png" />
+    <Resource Include="Images\win01.png" />
+    <Resource Include="Images\win_close01.png" />
+    <Resource Include="Images\win_max01.png" />
+    <Resource Include="Images\win_min01.png" />
+    <Resource Include="Images\win_restore01.png" />
+    <Resource Include="Images\word01.png" />
+    <Resource Include="Images\ws01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\2\Delete.ico" />
+    <Resource Include="Images\2\Delete_16.png" />
+    <Resource Include="Images\2\Excel.ico" />
+    <Resource Include="Images\2\Excel_16.png" />
+    <Resource Include="Images\2\Settings.ico" />
+    <Resource Include="Images\2\Settings_16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

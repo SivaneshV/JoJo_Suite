@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71BFCBD4-CE8A-410C-B90C-038CF4619447}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>r2rStudio</RootNamespace>
+    <AssemblyName>r2rStudio</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVars.Designer.cs">
+      <DependentUpon>frmVars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVars.resx">
+      <DependentUpon>frmVars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iet-robotics-showcase-london-18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logic01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start01_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\db01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\r2rStudio.Access\r2rStudio.Office.Access.csproj">
+      <Project>{e5599c50-fa19-4a9a-9a92-03fe7567be4d}</Project>
+      <Name>r2rStudio.Office.Access</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Base\r2rStudio.Base.csproj">
+      <Project>{7255ac9a-ee5d-40bb-9539-13de7420f87d}</Project>
+      <Name>r2rStudio.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Db\r2rStudio.Database.csproj">
+      <Project>{72fd07a7-777f-4cb3-8b6c-9ea12894455f}</Project>
+      <Name>r2rStudio.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Email\r2rStudio.Email.csproj">
+      <Project>{98feeb04-fead-4006-afc5-c925324ecabf}</Project>
+      <Name>r2rStudio.Email</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rSTudio.Logic\r2rStudio.Logic.csproj">
+      <Project>{faa7bc6b-794c-4022-a675-d14203283b71}</Project>
+      <Name>r2rStudio.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Office.Excel\r2rStudio.Office.Excel.csproj">
+      <Project>{7a2fac00-1cf6-4383-a64f-8a7833694df7}</Project>
+      <Name>r2rStudio.Office.Excel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Office.PowerPoint\r2rStudio.Office.PowerPoint.csproj">
+      <Project>{cd30bcd0-1a1b-4995-8731-bac56a8b0da3}</Project>
+      <Name>r2rStudio.Office.PowerPoint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Outlook\r2rStudio.Office.Outlook.csproj">
+      <Project>{460a4059-15ad-4bc5-89c1-e917bb9507ff}</Project>
+      <Name>r2rStudio.Office.Outlook</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Pdf\r2rStudio.Pdf.csproj">
+      <Project>{5dd97dde-f649-49c1-815f-b3535e42ded9}</Project>
+      <Name>r2rStudio.Pdf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.SAP\r2rStudio.SAP.csproj">
+      <Project>{a4349127-adf6-4ed4-9d98-f09b682ca27b}</Project>
+      <Name>r2rStudio.SAP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.SharePoint\r2rStudio.SharePoint.csproj">
+      <Project>{2a2ae9d9-11d7-42db-8452-0fa5422056a0}</Project>
+      <Name>r2rStudio.SharePoint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.WebServices\r2rStudio.WebServices.csproj">
+      <Project>{88287d71-12c1-447a-8b89-afb9d82a40a7}</Project>
+      <Name>r2rStudio.WebServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Web\r2rStudio.Web.csproj">
+      <Project>{aeac9874-e01c-41f8-9e4d-8e70ac27a421}</Project>
+      <Name>r2rStudio.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Windows\r2rStudio.Windows.csproj">
+      <Project>{50f5fc57-8df4-48df-8c36-7e21f9535b7b}</Project>
+      <Name>r2rStudio.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\r2rStudio.Word\r2rStudio.Office.Word.csproj">
+      <Project>{5e1ac4a0-30b0-4750-ae46-231314ba075d}</Project>
+      <Name>r2rStudio.Office.Word</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\templateWorkflow.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

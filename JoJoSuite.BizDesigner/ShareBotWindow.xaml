@@ -1,0 +1,79 @@
+﻿<Window x:Class="JoJoSuite.UI.ShareBotWindow"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JoJoSuite.UI"
+        mc:Ignorable="d"
+        Title="R2r" 
+        Height="480" 
+        Width="500" 
+        Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" 
+        WindowState="Normal" 
+        ResizeMode="CanResizeWithGrip" 
+        AllowsTransparency="True" 
+        WindowStyle="None" 
+        BorderThickness="1" 
+        BorderBrush="{DynamicResource ThemeColor3}" Margin="0" WindowStartupLocation="CenterOwner">
+
+    <DockPanel x:Name="dpMain" Width="Auto" Height="Auto" Background="{DynamicResource ThemeColor1}" LastChildFill="True" Margin="0">
+
+        <Grid x:Name="gridTitle" DockPanel.Dock="Top" Height="33" MouseLeftButtonDown="gridTitle_MouseLeftButtonDown" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="48" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Grid.Column="0" Height="24" Width="24" Source="Images/share02.png" />
+
+            <DockPanel Grid.Row="0" Grid.Column="1">
+                <Label Content="Share Bot" FontFamily="Arial" FontSize="12" Foreground="{DynamicResource ThemeColor4}" VerticalAlignment="Center"  />
+            </DockPanel>
+
+            <Button x:Name="btnWinClose" Grid.Row="0" Grid.Column="2" Width="48" Height="32" HorizontalAlignment="Right" BorderThickness="0" Click="btnWinClose_Click" VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{DynamicResource ThemeColor1}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Image Height="14" Width="14" Source="/images/win_close01.png" />
+            </Button>
+        </Grid>
+
+        <StackPanel Name="pnlStatus" DockPanel.Dock="Bottom" Width="Auto" Height="30" Background="{DynamicResource ThemeColor1}" Orientation="Horizontal" >
+            <Label x:Name="lblStatus" Height="23" Content="Share Bot with other Users." FontFamily="Arial" FontSize="12" Foreground="White" Margin="10,0" />
+        </StackPanel>
+
+        <Grid Height="auto" Background="{DynamicResource ThemeColor4}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lbl11" Grid.Row="0" Content="Select Users:" Margin="0"/>
+
+            <ListBox x:Name="lbUsers" Grid.Row="1" Margin="0" BorderBrush="{x:Null}" />
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="btnOK2" Style="{StaticResource PrimaryButton}" Click="btnOK_Click" Content="Save" />
+                <Button x:Name="btnCancel2" Style="{StaticResource OrangeButton}" Click="btnCancel_Click" Content="Cancel" />
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

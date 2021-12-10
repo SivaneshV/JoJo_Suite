@@ -1,0 +1,26 @@
+public void ConvertToTextMain()
+{
+    //Text
+    pdftextinput = "{0}";
+    string op = Path.GetFileNameWithoutExtension(pdftextinput);
+    pdftextoutput = "{0}" + op + ".txt";
+
+    PDFParser pdfParser = new PDFParser();
+    ConvertToText(pdfParser);
+
+}
+private static void ConvertToText(PDFParser pdfParser)
+{
+    bool result = pdfParser.ExtractText(pdftextinput, pdftextoutput);
+    if (result)
+    {
+        Console.WriteLine("Text Convertion success");
+        Console.ReadKey();
+    }
+    else
+    {
+        Console.WriteLine("Text Convertion Failed");
+        Console.ReadKey();
+
+    }
+}

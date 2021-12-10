@@ -1,0 +1,324 @@
+﻿<Window x:Class="JoJoSuite.Business.Designer.FirstWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JoJoSuite.UI"
+        xmlns:properties="clr-namespace:JoJoSuite.UI.Properties"
+        mc:Ignorable="d"
+        Title="R2R" 
+        Height="600" 
+        Width="1200" 
+        Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" 
+        WindowState="Maximized" 
+        ResizeMode="CanResizeWithGrip" 
+        AllowsTransparency="True" 
+        WindowStyle="None" Margin="0">
+    <DockPanel x:Name="dpMain" Width="Auto" Height="Auto" Background="{DynamicResource ThemeColor1}" LastChildFill="True" Margin="6">
+        <Grid x:Name="gridTitle" DockPanel.Dock="Top" Height="33" MouseLeftButtonDown="gridTitle_MouseLeftButtonDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="48" />
+                <ColumnDefinition Width="48" />
+                <ColumnDefinition Width="48" />
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Row="0" Grid.Column="0">
+                <Image Source="Images/r202a.png" Stretch="Fill" VerticalAlignment="Center" Margin="10,0,10,0" Width="32" Height="32"></Image>
+                <Label  x:Name="lblTitle" Content="" FontFamily="Arial" FontSize="12" Foreground="{DynamicResource ThemeColor4}" VerticalAlignment="Center"  />
+            </DockPanel>
+            <Button x:Name="btnWinUser" Cursor="Hand" ContextMenuService.Placement="Bottom" Grid.Row="0" Grid.Column="1" Height="28" HorizontalAlignment="Right" BorderThickness="0" VerticalAlignment="Top" Click="btnWinUser_Click">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{DynamicResource ThemeColor1}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{DynamicResource ThemeColor2}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Label Name="lblWinUser" Content="Sivanesh" Foreground="{DynamicResource ThemeColor4}" />
+                <Button.ContextMenu>
+                    <ContextMenu Placement="Bottom">
+                        <MenuItem Header="Contact Admin" />
+                        <MenuItem Header="Settings" />
+                        <MenuItem Header="-" />
+                        <MenuItem Name="miSignOut" Click="miSignOut_Click" Header="Sign Out" />
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+            <Button x:Name="btnWinMin" Grid.Row="0" Grid.Column="2" Width="48" Height="28" HorizontalAlignment="Right" BorderThickness="0" Click="btnWinMin_Click" VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{DynamicResource ThemeColor1}"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                                <Setter Property="Background" Value="{DynamicResource ThemeColor1}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Image Height="14" Width="14" Source="/images/win_min01.png" />
+            </Button>
+            <Button x:Name="btnWinRestore" Grid.Row="0" Grid.Column="3" Width="48" Height="28" HorizontalAlignment="Right" BorderThickness="0" Click="btnWinRestore_Click" VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{DynamicResource ThemeColor1}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{DynamicResource ThemeColor1}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Image x:Name="btnWinRestoreImage" Height="14" Width="14" Source="/images/win_restore01.png" />
+            </Button>
+            <Button x:Name="btnWinClose" Grid.Row="0" Grid.Column="4" Width="48" Height="28" HorizontalAlignment="Right" BorderThickness="0" Click="btnWinClose_Click" VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{DynamicResource ThemeColor1}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Image Height="14" Width="14" Source="/images/win_close01.png" />
+            </Button>
+        </Grid>
+        <StackPanel Name="pnlStatus" Width="Auto" Height="30" Background="{DynamicResource ThemeColor1}" Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Label x:Name="lblStatus" Height="23" Content="Welcome to JoJo Suite" FontFamily="Arial" FontSize="12" Foreground="Black" Margin="10,0" />
+        </StackPanel>
+
+        <Grid x:Name="gridMain" Width="Auto" Height="Auto" Background="{DynamicResource ThemeColor2}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="140" />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="btnBackMain" Grid.Column="0" Grid.Row="0" Margin="0" BorderThickness="0" BorderBrush="{x:Null}" Style="{StaticResource ToolbarButton2}" Click="btnBackMain_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Height="32" Width="32" Source="Images/Go Back_52px2.png" />
+                </StackPanel>
+            </Button>
+
+            <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical">
+
+                <Button x:Name="btnTemplateBlank" Background="#fff" Width="Auto" Height="60" Margin="10,5" Click="btnTemplateBlank_Click">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="200">
+                        <Image Source="Images/r1.png" Stretch="Fill" VerticalAlignment="Center" Margin="10,0,10,0" Width="32" Height="32"></Image>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="New" VerticalAlignment="Center" FontWeight="Bold"/>
+                            <Label Content="Create a new robot" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+                <!--<Button x:Name="btnTemplateGMB" Background="#fff" Width="Auto" Height="60" Margin="10,5">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="200">
+                        <Image Source="Images/r10.png" Stretch="Fill" VerticalAlignment="Center" Margin="10,0,10,0" Width="32" Height="32"></Image>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="GMB" VerticalAlignment="Center" FontWeight="Bold"/>
+                            <Label Content="Create a GMB based robot" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="btnTemplateTimer" Background="#fff" Width="Auto" Height="60" Margin="10,5">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="200">
+                        <Image Source="Images/r8.png" Stretch="Fill" VerticalAlignment="Center" Margin="10,0,10,0" Width="32" Height="32"></Image>
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="Timer" VerticalAlignment="Center" FontWeight="Bold"/>
+                            <Label Content="Create a timer robot" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Button>-->
+
+            </StackPanel>
+
+            <Grid Grid.Column="0" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="25*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Background="{DynamicResource ThemeColor3}">
+                    <Label  Content="Democratize Robotics" VerticalAlignment="Center" FontFamily="HP Simplified"  Foreground="#ECEFF1" FontSize="16" HorizontalAlignment="Center" />
+                </StackPanel>
+
+                <Label Name="lblA" Grid.Column="0" Grid.Row="1" Content="" Background="#FF5722" Margin="2" />
+                <Label Name="lblB" Grid.Column="1" Grid.Row="1" Content="" Background="#8BC34A" Margin="2" />
+                <Label Name="lblC" Grid.Column="2" Grid.Row="1" Content="" Background="#FFC107" Margin="2" />
+                <Label Name="lblD" Grid.Column="3" Grid.Row="1" Content="" Background="#2196F3" Margin="2" />
+
+            </Grid>
+
+         
+            
+            <Grid Grid.Column="0" Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="Images/r202a.png" Stretch="Uniform" VerticalAlignment="Center" Margin="10" Height="120" HorizontalAlignment="Center"></Image>
+            </Grid>
+       
+            <GridSplitter Background="{DynamicResource ThemeColor4}" Height="Auto" Width="5" Grid.Row="0" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Left" VerticalAlignment="Stretch" ShowsPreview="True" />
+
+            <DockPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="4" Background="{DynamicResource ThemeColor4}">
+
+                <TabControl BorderBrush="{x:Null}" VerticalAlignment="Stretch" Margin="5"  TabStripPlacement="Bottom" Background="{DynamicResource ThemeColor4}">
+                    <TabControl.Resources>
+                        <Style TargetType="TabItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TabItem">
+                                        <Grid Name="Panel">
+                                            <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Panel" Property="Background" Value="{DynamicResource ThemeColor2}" />
+                                                <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="{DynamicResource ThemeColor4}" />
+                                            </Trigger>
+                                            <Trigger Property="IsSelected" Value="False">
+                                                <Setter TargetName="Panel" Property="Background" Value="{DynamicResource ThemeColor4}" />
+                                                <Setter TargetName="Panel" Property="TextElement.Foreground" Value="{DynamicResource ThemeColor2}" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TabControl.Resources>
+                    <TabItem Header="Sign In" Name="tiSignIn">
+                        <ContentControl x:Name="ccSignIn">
+                            <StackPanel Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{DynamicResource ThemeColor4}">
+
+                                <Label x:Name="lbl1" Content="Sign In to JoJo Suite" Margin="10" FontWeight="Bold"/>
+
+                                <Rectangle Height="1" Fill="{DynamicResource ThemeColor1}" Margin="0" />
+
+                                <Label x:Name="lblEmail" Content="Email Address:" Margin="5"/>
+
+                                <TextBox x:Name="txtEmail" Height="23" FontSize="14" Width="300" TextWrapping="Wrap" Margin="5,0,10,0" Text="{Binding Source={x:Static properties:Settings.Default}, Path=A1}" />
+
+                                <Label x:Name="lblPwd" Content="Password:" Margin="5" />
+
+                                <PasswordBox x:Name="pbPwd" Margin="5,0,10,0" FontSize="14" Width="300" Height="23" Password="" />
+
+                                <CheckBox Name="chkRemember" Content="Remember Me" Margin="5" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=A3}"></CheckBox>
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" Margin="0">
+
+                                    <Button x:Name="btnSignIn2" Style="{StaticResource PrimaryButton}" Content="Sign In" Click="btnSignIn_Click" />
+
+                                    <Button x:Name="btnNo2" Style="{StaticResource OrangeButton}" Content="Cancel" Click="btnNo_Click" />
+
+                                </StackPanel>
+
+                            </StackPanel>
+                        </ContentControl>
+                    </TabItem>
+                    <TabItem Name="tiBots" Height="22" Margin="-1.8,0,-2,-2" VerticalAlignment="Top">
+                        <ContentControl x:Name="ccBots">
+                            <TabControl Margin="10" Background="{DynamicResource ThemeColor4}">
+                                <TabItem Header="My Bots">
+                                    <ContentControl>
+                                        <DockPanel>
+                                            <Grid Height="40" DockPanel.Dock="Top">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80" />
+                                                    <ColumnDefinition Width="80" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="80" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Button Grid.Column="0" x:Name="btnLoadMyBot" Content="Open" Style="{StaticResource PrimaryButton}" HorizontalAlignment="Right" Click="btnLoadMyBot_Click" />
+                                                <Button Grid.Column="1" x:Name="btnDelMyBot" Style="{StaticResource RedButton}" HorizontalAlignment="Right" Click="btnDelMyBot_Click" Content="Delete" />
+                                                <Button Grid.Column="3" x:Name="btnReloadMyBot" Style="{StaticResource DefaultButton}" HorizontalAlignment="Left" Click="btnReloadMyBot_Click" Content="Reload" />
+
+                                            </Grid>
+                                            <ListBox x:Name="lbMyBots" Margin="5" BorderBrush="{x:Null}" SelectionChanged="lbMyBots_SelectionChanged"/>
+                                        </DockPanel>
+                                    </ContentControl>
+                                </TabItem>
+                                <TabItem Header="Shared Bots">
+                                    <ContentControl>
+                                        <DockPanel>
+                                            <Grid Height="40" DockPanel.Dock="Top">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="80" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Button Grid.Column="0" Style="{StaticResource PrimaryButton}" x:Name="btnLoadSharedBot" HorizontalAlignment="Right" Click="btnLoadSharedBot_Click" Content="Open" />
+                                                <Button Grid.Column="2" Style="{StaticResource DefaultButton}" x:Name="btnReloadSharedBot" HorizontalAlignment="Left" Click="btnReloadSharedBot_Click" Content="Reload" />
+                                        
+                                            </Grid>
+                                            <ListBox x:Name="lbSharedBots" Margin="5" SelectionChanged="lbSharedBots_SelectionChanged" BorderBrush="{x:Null}"/>
+                                        </DockPanel>
+                                    </ContentControl>
+                                </TabItem>
+                            </TabControl>
+                        </ContentControl>
+                    </TabItem>
+                </TabControl>
+            </DockPanel>
+      
+        </Grid>
+    </DockPanel>
+</Window>
